@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]><html class="no-js ie ltie8 ltie9 ltie10" lang="ru"><![endif]-->
+<!--[if IE 8]><html class="no-js ie ie8 ltie9 ltie10" lang="ru"><![endif]-->
+<!--[if IE 9]><html class="no-js ie gtie8 ie9 ltie10" lang="ru"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="no-js" lang="ru"><!--><![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- нормализация дефолтных стилей браузеров -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<!-- стилизация выпадающих списков select2 -->
+	<link rel="stylesheet" href="css/select2.css">
+	<!-- основные стили -->
+	<link rel="stylesheet" href="css/main.css">
+
+	<!-- проверка поддержки свойств в разных браузерах. https://modernizr.com -->
+	<script src="js/modernizr-custom.js"></script>
+	<!-- поддержка html5-тегов, css3-селекторов, медиа-запросов в IE<=8 -->
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.min.js"></script>
+		<script src="js/nwmatcher-1.2.5.js"></script>
+		<script src="js/selectivizr-min.js"></script>
+		<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	<title>СПАиМИП</title>
+</head>
+<body>
+
+	<!-- BEGIN page  -->
+	<div class="page">
+		<!-- BEGIN page-header -->
+		<div class="page-header">
+			<a class="page-header__item  page-header__logo  logo" href="">
+				<span class="logo__text">
+					<span class="logo__company">Внешэкономбанк</span>
+					<span class="logo__system">Система планирования, анализа и мониторинга инвестиционных проектов</span>
+				</span>
+			</a>
+
+			<!-- BEGIN user -->
+			<div class="page-header__item  page-header__user  drop  drop_pos_right" id="user-drop">
+				<div class="user  drop__trigger">
+					<span class="user__data">
+						<span class="user__surname">Константинопольский</span>
+						<span class="user__name">Александр</span>
+					</span>
+					<a class="user__logout" href="#" title="Выйти"></a>
+				</div>
+				<div class="drop__content">
+					<ul class="list  list_nowrap">
+						<li class="list__item">
+							<a class="list__link" href="#">Личный кабинет</a>
+						</li>
+						<li class="list__item">
+							<a class="list__link" href="#">Сменить пароль</a>
+						</li>
+						<li class="list__item">
+							<a class="list__link" href="#">Выйти</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- END user -->
+
+			<div class="page-header__item  page-header__toolbar">
+				<ul class="user-toolbar">
+					<li class="user-toolbar__item">
+						<a class="user-toolbar__link" href="#" title="">
+							<img class="user-toolbar__icon" src="img/toolbar-help.png" alt="">
+						</a>
+					</li>
+					<li class="user-toolbar__item">
+						<a class="user-toolbar__link" href="#" title="">
+							<img class="user-toolbar__icon" src="img/toolbar-messages.png" alt="">
+							<span class="user-toolbar__count  count">2</span>
+						</a>
+					</li>
+					<li class="user-toolbar__item  user-toolbar__item_drop">
+						<a class="user-toolbar__link" href="#" title="">
+							<img class="user-toolbar__icon" src="img/toolbar-docs.png" alt="">
+						</a>
+					</li>
+					<li class="user-toolbar__item">
+						<a class="user-toolbar__link" href="#" title="" id="searchTriggerId">
+							<img class="user-toolbar__icon" src="img/toolbar-search.png" alt="">
+						</a>
+						<form class="search-form" id="searchFormId">
+							<div class="search-form__field  field-box">
+								<input class="field-box__input  input" type="text" placeholder="Поиск">
+								<button class="field-box__btn  field-box__btn_search" type="button"></button>
+							</div>
+						</form>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- END page-header -->
+
+
+		<!-- BEGIN page-menu -->
+		<div class="page-menu">
+			<ul class="page-menu__in">
+				<li class="page-menu__item  page-menu__item_active">
+					<a class="page-menu__link" href="#" title="Реестр документов">
+						<span class="page-menu__icon  page-menu__icon_reestr"></span>
+						<span class="page-menu__text">Реестр документов</span>
+					</a>
+				</li>
+				<li class="page-menu__item">
+					<a class="page-menu__link" href="#" title="Задачи">
+						<span class="page-menu__icon  page-menu__icon_tasks"></span>
+						<span class="page-menu__text">
+							Задачи
+						</span>
+						<span class="page-menu__count  count">2</span>
+					</a>
+				</li>
+				<li class="page-menu__item">
+					<a class="page-menu__link" href="#" title="Планы бизнес-показателей">
+						<span class="page-menu__icon  page-menu__icon_plans"></span>
+						<span class="page-menu__text">Планы бизнес-показателей</span>
+					</a>
+				</li>
+				<li class="page-menu__item">
+					<a class="page-menu__link" href="#" title="Пользовательские отчеты">
+						<span class="page-menu__icon  page-menu__icon_reports"></span>
+						<span class="page-menu__text">
+							Пользовательские отчеты
+						</span>
+						<span class="page-menu__count  count">37</span>
+					</a>
+				</li>
+				<li class="page-menu__item  drop  drop_pos_right" id="help-docs-menu">
+					<a class="page-menu__link  drop__trigger" href="#" title="Справочные материалы">
+						<span class="page-menu__icon  page-menu__icon_dicts"></span>
+						<span class="page-menu__text">Справочные материалы</span>
+					</a>
+					<div class="drop__content">
+						<ul class="list  list_nowrap">
+							<li class="list__item">
+								<a class="list__link" href="#">Информационно-аналитические материалы</a>
+							</li>
+							<li class="list__item">
+								<a class="list__link" href="#">Социально-экономическая информация</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- END page-menu -->
+
+
+		<!-- BEGIN page-content -->
+		<div class="page-content">
+
+			<!-- BEGIN page-main -->
+			<div class="page-main">
+
+				<form class="add-form">
+					<h2 class="add-form__title  title">Создание первичного обращения</h2>
+					<div class="add-form__body">
+						<div class="form-field">
+							<label class="form-field__title" for="" >Наименование заявки</label>
+							<div class="form-field__box  field-box  field-box_full">
+								<input class="field-box__input  input" type="text">
+							</div>
+						</div>
+
+						<div class="form-field">
+							<label class="form-field__title" for="" >Заявитель</label>
+							<div class="form-field__box  field-box  field-box_full">
+								<div class="field-group">
+									<div class="field-group__item">
+										<input class="field-box__input  input  input_required" type="text" value="Министерство финансов Красноярского края">
+									</div>
+									<div class="field-group__item  field-group__item_zip">
+										<button class="btn  btn_only-icon  btn_shadow" type="button">
+											<span class="btn__icon  icon  icon_dots"></span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-field">
+							<label class="form-field__title" for="" >Стоимость проекта</label>
+							<div class="form-field__box  field-box">
+								<div class="field-group">
+									<div class="field-group__item">
+										<input class="field-box__input  input  input_number" style="width: 330px" type="text" value="200 000 000 000">
+									</div>
+									<div class="field-group__item">
+										<!-- атрибут data-container-css-class для добавления класса на элемент select2-selection -->
+										<select class="js-select" style="width: 138px" data-container-css-class="select2-required">
+											<option value="">РУБ</option>
+											<option value="">EURO</option>
+											<option value="">USD</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-field">
+							<label class="form-field__title" for="" >Объем участия Внешэкономбанка</label>
+							<div class="form-field__box  field-box">
+								<div class="field-group">
+									<div class="field-group__item">
+										<input class="field-box__input  input" style="width: 330px" type="text">
+									</div>
+									<div class="field-group__item">
+										<select class="js-select" style="width: 138px">
+											<option value="">РУБ</option>
+											<option value="">EURO</option>
+											<option value="">USD</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-field">
+							<label class="form-field__title" for="" >Дата фактического поступления</label>
+							<div class="form-field__box  field-box">
+								<input class="field-box__input  input  js-datepicker" type="text" value="12.12.2012">
+							</div>
+						</div>
+					</div>
+
+					<div class="add-form__foot">
+						<button class="add-form__btn  btn  btn_act">
+							<span class="btn__text">Создать и перейти в реестр</span>
+						</button>
+						<button class="add-form__btn  btn  btn_act">
+							<span class="btn__text">Создать и продолжить ввод атрибутов</span>
+						</button>
+						<button class="add-form__btn  btn  btn_cancel">
+							<span class="btn__text">Отменить</span>
+						</button>
+					</div>
+				</form>
+			</div>
+			<!-- END page-main -->
+		</div>
+		<!-- END page-content -->
+	</div>
+	<!-- END page -->
+
+
+	<!-- BEGIN scripts  -->
+	<!-- сторонние библиотеки -->
+	<script src="js/jquery-1.12.1.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/select2.full.min.js"></script>
+	<script src="js/jquery.inputmask.bundle.min.js"></script>
+	<script src="js/placeholders.min.js"></script>
+
+	<!-- основные скрипты -->
+	<script src="js/scripts.js"></script>
+	<!-- END scripts -->
+
+</body>
+</html>

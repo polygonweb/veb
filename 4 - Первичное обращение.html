@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]><html class="no-js ie ltie8 ltie9 ltie10" lang="ru"><![endif]-->
+<!--[if IE 8]><html class="no-js ie ie8 ltie9 ltie10" lang="ru"><![endif]-->
+<!--[if IE 9]><html class="no-js ie gtie8 ie9 ltie10" lang="ru"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="no-js" lang="ru"><!--><![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- нормализация дефолтных стилей браузеров -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<!-- стилизация выпадающих списков select2 -->
+	<link rel="stylesheet" href="css/select2.css">
+	<!-- основные стили -->
+	<link rel="stylesheet" href="css/main.css">
+
+	<!-- проверка поддержки свойств в разных браузерах. https://modernizr.com -->
+	<script src="js/modernizr-custom.js"></script>
+	<!-- поддержка html5-тегов, css3-селекторов, медиа-запросов в IE<=8 -->
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.min.js"></script>
+		<script src="js/nwmatcher-1.2.5.js"></script>
+		<script src="js/selectivizr-min.js"></script>
+		<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	<title>СПАиМИП</title>
+</head>
+<body>
+
+	<!-- BEGIN page  -->
+	<div class="page">
+		<!-- BEGIN page-header -->
+		<div class="page-header">
+			<a class="page-header__item  page-header__logo  logo" href="">
+				<span class="logo__text">
+					<span class="logo__company">Внешэкономбанк</span>
+					<span class="logo__system">Система планирования, анализа и мониторинга инвестиционных проектов</span>
+				</span>
+			</a>
+
+			<!-- BEGIN user -->
+			<div class="page-header__item  page-header__user  drop  drop_pos_right" id="user-drop">
+				<div class="user  drop__trigger">
+					<span class="user__data">
+						<span class="user__surname">Константинопольский</span>
+						<span class="user__name">Александр</span>
+					</span>
+					<a class="user__logout" href="#" title="Выйти"></a>
+				</div>
+				<div class="drop__content">
+					<ul class="list  list_nowrap">
+						<li class="list__item">
+							<a class="list__link" href="#">Личный кабинет</a>
+						</li>
+						<li class="list__item">
+							<a class="list__link" href="#">Сменить пароль</a>
+						</li>
+						<li class="list__item">
+							<a class="list__link" href="#">Выйти</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- END user -->
+
+			<div class="page-header__item  page-header__toolbar">
+				<ul class="user-toolbar">
+					<li class="user-toolbar__item">
+						<a class="user-toolbar__link" href="#" title="">
+							<img class="user-toolbar__icon" src="img/toolbar-help.png" alt="">
+						</a>
+					</li>
+					<li class="user-toolbar__item">
+						<a class="user-toolbar__link" href="#" title="">
+							<img class="user-toolbar__icon" src="img/toolbar-messages.png" alt="">
+							<span class="user-toolbar__count  count">2</span>
+						</a>
+					</li>
+					<li class="user-toolbar__item  user-toolbar__item_drop">
+						<a class="user-toolbar__link" href="#" title="">
+							<img class="user-toolbar__icon" src="img/toolbar-docs.png" alt="">
+						</a>
+					</li>
+					<li class="user-toolbar__item">
+						<a class="user-toolbar__link" href="#" title="" id="searchTriggerId">
+							<img class="user-toolbar__icon" src="img/toolbar-search.png" alt="">
+						</a>
+						<form class="search-form" id="searchFormId">
+							<div class="search-form__field  field-box">
+								<input class="field-box__input  input" type="text" placeholder="Поиск">
+								<button class="field-box__btn  field-box__btn_search" type="button"></button>
+							</div>
+						</form>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- END page-header -->
+
+
+		<!-- BEGIN page-menu -->
+		<div class="page-menu">
+			<ul class="page-menu__in">
+				<li class="page-menu__item  page-menu__item_active">
+					<a class="page-menu__link" href="#" title="Реестр документов">
+						<span class="page-menu__icon  page-menu__icon_reestr"></span>
+						<span class="page-menu__text">Реестр документов</span>
+					</a>
+				</li>
+				<li class="page-menu__item">
+					<a class="page-menu__link" href="#" title="Задачи">
+						<span class="page-menu__icon  page-menu__icon_tasks"></span>
+						<span class="page-menu__text">
+							Задачи
+						</span>
+						<span class="page-menu__count  count">2</span>
+					</a>
+				</li>
+				<li class="page-menu__item">
+					<a class="page-menu__link" href="#" title="Планы бизнес-показателей">
+						<span class="page-menu__icon  page-menu__icon_plans"></span>
+						<span class="page-menu__text">Планы бизнес-показателей</span>
+					</a>
+				</li>
+				<li class="page-menu__item">
+					<a class="page-menu__link" href="#" title="Пользовательские отчеты">
+						<span class="page-menu__icon  page-menu__icon_reports"></span>
+						<span class="page-menu__text">
+							Пользовательские отчеты
+						</span>
+						<span class="page-menu__count  count">37</span>
+					</a>
+				</li>
+				<li class="page-menu__item  drop  drop_pos_right" id="help-docs-menu">
+					<a class="page-menu__link  drop__trigger" href="#" title="Справочные материалы">
+						<span class="page-menu__icon  page-menu__icon_dicts"></span>
+						<span class="page-menu__text">Справочные материалы</span>
+					</a>
+					<div class="drop__content">
+						<ul class="list  list_nowrap">
+							<li class="list__item">
+								<a class="list__link" href="#">Информационно-аналитические материалы</a>
+							</li>
+							<li class="list__item">
+								<a class="list__link" href="#">Социально-экономическая информация</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- END page-menu -->
+
+
+		<!-- BEGIN page-content -->
+		<div class="page-content">
+
+			<!-- BEGIN page-title-bar -->
+			<!-- END page-title-bar -->
+
+			<!-- BEGIN toolbar -->
+			<div class="toolbar">
+				<div class="toolbar__part  toolbar__part_right" id="filterBlock">
+					<button class="tool  btn">
+						<span class="btn__text">Сохранить</span>
+					</button>
+					<button class="tool  btn">
+						<span class="btn__text">Отменить</span>
+					</button>
+				</div>
+
+				<div class="toolbar__part">
+					<div class="tool  drop  drop_pos_left" id="reestr-list">
+						<button class="tool__btn  btn  tool__btn_drop  drop__trigger">
+							<span class="btn__icon  icon  icon_add"></span>
+						</button>
+						<div class="drop__content">
+						<ul class="list  list_nowrap">
+							<li class="list__item"><a class="list__link" href="#">Первичное обращение</a></li>
+							<li class="list__item"><a class="list__link" href="#">Инвестиционный проект</a></li>
+							<li class="list__item"><a class="list__link" href="#">Инвестиционный кредит</a></li>
+							<li class="list__item"><a class="list__link" href="#">Аккредитив</a></li>
+							<li class="list__item"><a class="list__link" href="#">Участие в капитале</a></li>
+							<li class="list__item"><a class="list__link" href="#">Оферта</a></li>
+							<li class="list__item"><a class="list__link" href="#">Кредит</a></li>
+							<li class="list__item"><a class="list__link" href="#">Банковская гарантия</a></li>
+							<li class="list__item"><a class="list__link" href="#">Заявка на рефинансирование</a></li>
+							<li class="list__item"><a class="list__link" href="#">Обращение на рефинансирование</a></li>
+							<li class="list__item"><a class="list__link" href="#">Кредит на рефинансирование</a></li>
+							<li class="list__item"><a class="list__link" href="#">Лимиты</a></li>
+							<li class="list__item"><a class="list__link" href="#">Экспортный кредит</a></li>
+						</ul>
+						</div>
+					</div>
+					<div class="tool">
+						<button class="tool__btn  btn">
+							<span class="btn__icon  icon  icon_update"></span>
+						</button>
+					</div>
+					<div class="tool">
+						<button class="tool__btn  btn">
+							<span class="btn__icon  icon  icon_deliver"></span>
+						</button>
+					</div>
+					<div class="tool">
+						<button class="tool__btn  btn">
+							<span class="btn__icon  icon  icon_run"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- END toolbar -->
+
+			<!-- BEGIN page-main -->
+			<div class="page-main">
+				<!-- BEGIN card  -->
+				<div class="card">
+					<!-- BEGIN card__head -->
+					<div class="card__head">
+						<div class="card__topbar">
+							<h2 class="card__name">Первичное обращение № 7837449</h2>
+
+							<div class="card__status  status">
+								<span class="status__label">Статус</span>
+								<button class="status__btn  btn  btn_shadow  btn_round">
+									<span class="btn__text">На рассмотрении</span>
+								</button>
+							</div>
+
+							<button class="card__create-btn  btn  create-btn">
+								<span class="btn__icon  icon  icon_new"></span>
+								<span class="btn__text">Создать проект/сделку</span>
+							</button>
+
+							<button class="card__toggle"></button>
+						</div>
+
+						<div class="card__head-fields">
+							<div class="card-field-grid">
+								<div class="card-field-grid__cell  card-field-grid__cell_1">
+									<div class="card-field-block">
+										<div class="card-field-block__row  form-field  form-field_horizontal">
+											<label class="card-field-block__cell  form-field__title">Наименование заявки/обращения</label>
+											<div class="card-field-block__cell  form-field__box  field-box">
+												<input class="field-box__input  input  input_full  input_required" type="text">
+											</div>
+										</div>
+
+										<div class="card-field-block__row  form-field  form-field_horizontal">
+											<label class="card-field-block__cell  form-field__title" for="">Заявитель</label>
+											<div class="card-field-block__cell  form-field__box  field-box">
+												<div class="field-group">
+													<div class="field-group__item">
+														<input class="field-box__input  input  input_required" type="text" value="Центр передачи технологии строительства комплекса "Омега"">
+													</div>
+													<div class="field-group__item  field-group__item_zip">
+														<button class="btn  btn_only-icon  btn_shadow" type="button">
+															<span class="btn__icon  icon  icon_dots"></span>
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="card-field-grid__cell  card-field-grid__cell_2">
+									<div class="card-field-block">
+										<div class="card-field-block__row  form-field  form-field_horizontal">
+											<label class="card-field-block__cell  form-field__title">Стоимость проекта</label>
+											<div class="card-field-block__cell  form-field__box  field-box">
+												<div class="field-group">
+													<div class="field-group__item">
+														<input class="field-box__input  input  input_full" type="text">
+													</div>
+													<div class="field-group__item  field-group__item field-group__item_zip">
+														<select class="js-select" style="width: 80px" data-container-css-class="select2-required">
+															<option value="">РУБ</option>
+															<option value="">USD</option>
+															<option value="">EURO</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="card-field-block__row  form-field  form-field_horizontal">
+											<label class="card-field-block__cell  form-field__title">Объем участия Внешэкономбанка</label>
+											<div class="card-field-block__cell  form-field__box  field-box">
+												<div class="field-group">
+													<div class="field-group__item  field-group__item">
+														<input class="field-box__input  input  input_full" type="text">
+													</div>
+													<div class="field-group__item  field-group__item_zip">
+														<select class="js-select" style="width: 80px">
+															<option value="">РУБ</option>
+															<option value="">USD</option>
+															<option value="">EURO</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="card-field-grid__cell  card-field-grid__cell_3">
+									<table class="card-field-block">
+										<tr class="card-field-block__row  form-field  form-field_horizontal">
+											<td class="card-field-block__cell  form-field__title">Входящий номер</td>
+											<td class="card-field-block__cell  form-field__box  field-box">
+												<input class="field-box__input  input  input_full  input_required" type="text">
+											</td>
+											<td class="card-field-block__cell  form-field__title  form-field__title_zip">Дата</td>
+											<td class="card-field-block__cell  form-field__box  form-field__box">
+												<div class="field-box  field-box_full">
+													<input class="field-box__input  input  input_full  input_required js-datepicker" type="text">
+												</div>
+											</td>
+										</tr>
+
+										<tr class="card-field-block__row  form-field  form-field_horizontal">
+											<td class="card-field-block__cell  form-field__title" colspan="3">Дата фактического поступления</td>
+											<td class="card-field-block__cell  form-field__box">
+												<div class="field-box  field-box_full">
+													<input class="field-box__input  input  input_full  input_required js-datepicker" type="text">
+												</div>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END card__head -->
+
+					<!-- BEGIN card__body -->
+					<div class="card__body">
+						<div class="menu-layout  menu-layout_open  menu-layout_stretch">
+							<div class="menu-layout__side">
+								<!-- BEGIN menu-list -->
+								<div class="menu-list">
+									<a class="menu-list__item  menu-layout__toggle" href="#" title="Открыть/закрыть панель">
+										<span class="menu-list__icon  menu-list__icon_toggle"></span>
+									</a>
+									<a class="menu-list__item" href="#" title="Информация по заявке">
+										<span class="menu-list__icon  menu-list__icon_info"></span>
+										<span class="menu-list__text">Информация по заявке</span>
+									</a>
+									<a class="menu-list__item" href="#" title="Досье">
+										<span class="menu-list__icon  menu-list__icon_dossier"></span>
+										<span class="menu-list__text">Досье</span>
+									</a>
+									<a class="menu-list__item" href="#" title="Менеджеры">
+										<span class="menu-list__icon  menu-list__icon_managers"></span>
+										<span class="menu-list__text">Менеджеры</span>
+									</a>
+								</div>
+								<!-- END menu-list -->
+							</div>
+							<div class="menu-layout__main">
+								<h2 class="card__title  card__heading">Общая информация о проекте</h2>
+
+								<div class="card__content">
+									<div class="card__block">
+										<div class="form-field  form-field_horizontal">
+											<label class="form-field__title">Место реализации</label>
+											<div class="form-field__box">
+												<div class="field-group">
+													<div class="field-group__item">
+														<input class="field-box__input  input" type="text" value="">
+													</div>
+													<div class="field-group__item  field-group__item_zip">
+														<button class="btn  btn_only-icon  btn_shadow" type="button">
+															<span class="btn__icon  icon  icon_dots"></span>
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="card__block">
+										<div class="form-field  form-field_horizontal">
+											<label class="form-field__title">Вид проекта</label>
+											<div class="form-field__box  ">
+												<div class="field-group">
+													<div class="field-group__item">
+														<input class="field-box__input  input" type="text" value="">
+													</div>
+													<div class="field-group__item  field-group__item_zip">
+														<button class="btn  btn_only-icon  btn_shadow" type="button">
+															<span class="btn__icon  icon  icon_dots"></span>
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="card__block">
+										<div class="form-field  form-field_horizontal">
+											<label class="form-field__title">Стадия проекта</label>
+											<div class="form-field__box  ">
+												<select class="js-select" style="width: 100%">
+													<option value="">1</option>
+													<option value="">2</option>
+													<option value="">3</option>
+												</select>
+											</div>
+										</div>
+									</div>
+
+									<div class="card__block">
+										<div class="form-field  form-field_horizontal">
+											<label class="form-field__title">Отрасль</label>
+											<div class="form-field__box  ">
+												<input class="field-box__input  input" type="text" value="">
+											</div>
+										</div>
+									</div>
+
+									<div class="card__block">
+										<div class="form-field  form-field_horizontal">
+											<label class="form-field__title">Стоимость проекта</label>
+											<div class="form-field__box  ">
+												<div class="field-group">
+													<div class="field-group__item">
+														<input class="field-box__input  input  input_required" type="text" value="">
+													</div>
+													<div class="field-group__item  field-group__item_zip">
+														<input class="field-box__input  input  input_required" style="width: 174px" type="text" value="USD">
+													</div>
+													<div class="field-group__item  field-group__item_zip">
+														<button class="btn  btn_only-icon  btn_shadow" type="button">
+															<span class="btn__icon  icon  icon_add-small"></span>
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="card__block">
+										<div class="form-field  form-field_horizontal">
+											<label class="form-field__title">Объем участия Внешэкономбанка</label>
+											<div class="form-field__box  ">
+												<div class="field-group">
+													<div class="field-group__item">
+														<input class="field-box__input  input  input_required" type="text" value="">
+													</div>
+													<div class="field-group__item  field-group__item_zip">
+														<input class="field-box__input  input  input_required" style="width: 174px" type="text" value="USD">
+													</div>
+													<div class="field-group__item  field-group__item_zip">
+														<button class="btn  btn_only-icon  btn_shadow" type="button">
+															<span class="btn__icon  icon  icon_add-small"></span>
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="card__block">
+										<div class="form-field  form-field_horizontal">
+											<label class="form-field__title">Дата создания обращения</label>
+											<div class="form-field__box">
+												<div class="field-box" style="width: 157px">
+													<input class="field-box__input  input  js-datepicker" type="text">
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="card__block">
+										<div class="form-field  form-field_horizontal">
+											<div class="form-field__box  form-field__box_pad">
+												<label class="control  control_checkbox">
+													<input class="control__input" type="checkbox" checked="">
+													<span class="control__icon"></span>
+													<span class="control__text">Письменное поручение</span>
+												</label>
+											</div>
+										</div>
+									</div>
+
+									<div class="card__block">
+										<div class="form-field  form-field_horizontal">
+											<div class="form-field__box  form-field__box_pad">
+												<div class="btn-row">
+													<button class="btn-row__item  btn  btn_shadow  btn_only-icon">
+														<span class="btn__icon  icon  icon_add-small"></span>
+													</button>
+													<button class="btn-row__item  btn  btn_shadow  btn_only-icon">
+														<span class="btn__icon  icon  icon_edit-small"></span>
+													</button>
+													<button class="btn-row__item  btn  btn_shadow  btn_only-icon">
+														<span class="btn__icon  icon  icon_delete-small"></span>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<table class="data-table">
+										<colgroup>
+											<col>
+											<col style="width: 180px;">
+											<col style="width: 220px;">
+											<col style="width: 160px;">
+											<col>
+										</colgroup>
+										<thead class="data-table__head">
+											<tr class="data-table__row">
+												<th class="data-table__cell data-table__cell_head">Орган</th>
+												<th class="data-table__cell data-table__cell_head  data-table__cell_center">Дата поручения</th>
+												<th class="data-table__cell data-table__cell_head  data-table__cell_center">номер поручения</th>
+												<th class="data-table__cell data-table__cell_head  data-table__cell_center">Подписан</th>
+												<th class="data-table__cell data-table__cell_head">Файл</th>
+											</tr>
+										</thead>
+										<tbody class="data-table__body">
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<button class="btn  btn_shadow  btn_only-icon">
+														<span class="btn__icon  icon  icon_dots"></span>
+													</button>
+												</td>
+												<td class="data-table__cell  data-table__cell_center"></td>
+												<td class="data-table__cell  data-table__cell_center"></td>
+												<td class="data-table__cell  data-table__cell_center"></td>
+												<td class="data-table__cell"></td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<button class="btn  btn_shadow  btn_only-icon">
+														<span class="btn__icon  icon  icon_dots"></span>
+													</button>
+												</td>
+												<td class="data-table__cell  data-table__cell_center"></td>
+												<td class="data-table__cell  data-table__cell_center"></td>
+												<td class="data-table__cell  data-table__cell_center"></td>
+												<td class="data-table__cell"></td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<button class="btn  btn_shadow  btn_only-icon">
+														<span class="btn__icon  icon  icon_dots"></span>
+													</button>
+												</td>
+												<td class="data-table__cell  data-table__cell_center"></td>
+												<td class="data-table__cell  data-table__cell_center"></td>
+												<td class="data-table__cell  data-table__cell_center"></td>
+												<td class="data-table__cell"></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END card__body -->
+				</div>
+				<!-- END card -->
+			</div>
+			<!-- END page-main -->
+		</div>
+		<!-- END page-content -->
+	</div>
+	<!-- END page -->
+
+
+	<!-- BEGIN scripts  -->
+	<!-- сторонние библиотеки -->
+	<script src="js/jquery-1.12.1.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/select2.full.min.js"></script>
+	<script src="js/jquery.inputmask.bundle.min.js"></script>
+	<script src="js/placeholders.min.js"></script>
+
+	<!-- основные скрипты -->
+	<script src="js/scripts.js"></script>
+	<!-- END scripts -->
+
+</body>
+</html>

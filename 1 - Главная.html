@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]><html class="no-js ie ltie8 ltie9 ltie10" lang="ru"><![endif]-->
+<!--[if IE 8]><html class="no-js ie ie8 ltie9 ltie10" lang="ru"><![endif]-->
+<!--[if IE 9]><html class="no-js ie gtie8 ie9 ltie10" lang="ru"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="no-js" lang="ru"><!--><![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- нормализация дефолтных стилей браузеров -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<!-- стилизация выпадающих списков select2 -->
+	<link rel="stylesheet" href="css/select2.css">
+	<link rel="stylesheet" href="css/jquery.enhsplitter.css">
+	<!-- основные стили -->
+	<link rel="stylesheet" href="css/main.css">
+
+	<!-- проверка поддержки свойств в разных браузерах. https://modernizr.com -->
+	<script src="js/modernizr-custom.js"></script>
+	<!-- поддержка html5-тегов, css3-селекторов, медиа-запросов в IE<=8 -->
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.min.js"></script>
+		<script src="js/nwmatcher-1.2.5.js"></script>
+		<script src="js/selectivizr-min.js"></script>
+		<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	<title>СПАиМИП</title>
+</head>
+<body>
+
+	<!-- BEGIN page  -->
+	<div class="page">
+		<!-- BEGIN page-header -->
+		<div class="page-header">
+			<a class="page-header__item  page-header__logo  logo" href="">
+				<span class="logo__text">
+					<span class="logo__company">Внешэкономбанк</span>
+					<span class="logo__system">Система планирования, анализа и мониторинга инвестиционных проектов</span>
+				</span>
+			</a>
+
+			<!-- BEGIN user -->
+			<div class="page-header__item  page-header__user  drop  drop_pos_right" id="user-drop">
+				<div class="user  drop__trigger">
+					<span class="user__data">
+						<span class="user__surname">Константинопольский</span>
+						<span class="user__name">Александр</span>
+					</span>
+					<a class="user__logout" href="#" title="Выйти"></a>
+				</div>
+				<div class="drop__content">
+					<ul class="list  list_nowrap">
+						<li class="list__item">
+							<a class="list__link" href="#">Личный кабинет</a>
+						</li>
+						<li class="list__item">
+							<a class="list__link" href="#">Сменить пароль</a>
+						</li>
+						<li class="list__item">
+							<a class="list__link" href="#">Выйти</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- END user -->
+
+			<div class="page-header__item  page-header__toolbar">
+				<ul class="user-toolbar">
+					<li class="user-toolbar__item">
+						<a class="user-toolbar__link" href="#" title="">
+							<img class="user-toolbar__icon" src="img/toolbar-help.png" alt="">
+						</a>
+					</li>
+					<li class="user-toolbar__item">
+						<a class="user-toolbar__link" href="#" title="">
+							<img class="user-toolbar__icon" src="img/toolbar-messages.png" alt="">
+							<span class="user-toolbar__count  count">2</span>
+						</a>
+					</li>
+					<li class="user-toolbar__item  user-toolbar__item_drop">
+						<a class="user-toolbar__link" href="#" title="">
+							<img class="user-toolbar__icon" src="img/toolbar-docs.png" alt="">
+						</a>
+					</li>
+					<li class="user-toolbar__item">
+						<a class="user-toolbar__link" href="#" title="" id="searchTriggerId">
+							<img class="user-toolbar__icon" src="img/toolbar-search.png" alt="">
+						</a>
+						<form class="search-form" id="searchFormId">
+							<div class="search-form__field  field-box">
+								<input class="field-box__input  input" type="text" placeholder="Поиск">
+								<button class="field-box__btn  field-box__btn_search" type="button"></button>
+							</div>
+						</form>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- END page-header -->
+
+
+		<!-- BEGIN page-menu -->
+		<div class="page-menu">
+			<ul class="page-menu__in">
+				<li class="page-menu__item  page-menu__item_active">
+					<a class="page-menu__link" href="#" title="Реестр документов">
+						<span class="page-menu__icon  page-menu__icon_reestr"></span>
+						<span class="page-menu__text">Реестр документов</span>
+					</a>
+				</li>
+				<li class="page-menu__item">
+					<a class="page-menu__link" href="#" title="Задачи">
+						<span class="page-menu__icon  page-menu__icon_tasks"></span>
+						<span class="page-menu__text">
+							Задачи
+						</span>
+						<span class="page-menu__count  count">2</span>
+					</a>
+				</li>
+				<li class="page-menu__item">
+					<a class="page-menu__link" href="#" title="Планы бизнес-показателей">
+						<span class="page-menu__icon  page-menu__icon_plans"></span>
+						<span class="page-menu__text">Планы бизнес-показателей</span>
+					</a>
+				</li>
+				<li class="page-menu__item">
+					<a class="page-menu__link" href="#" title="Пользовательские отчеты">
+						<span class="page-menu__icon  page-menu__icon_reports"></span>
+						<span class="page-menu__text">
+							Пользовательские отчеты
+						</span>
+						<span class="page-menu__count  count">37</span>
+					</a>
+				</li>
+				<li class="page-menu__item  drop  drop_pos_right" id="help-docs-menu">
+					<a class="page-menu__link  drop__trigger" href="#" title="Справочные материалы">
+						<span class="page-menu__icon  page-menu__icon_dicts"></span>
+						<span class="page-menu__text">Справочные материалы</span>
+					</a>
+					<div class="drop__content">
+						<ul class="list  list_nowrap">
+							<li class="list__item">
+								<a class="list__link" href="#">Информационно-аналитические материалы</a>
+							</li>
+							<li class="list__item">
+								<a class="list__link" href="#">Социально-экономическая информация</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- END page-menu -->
+
+
+		<!-- BEGIN page-content -->
+		<div class="page-content">
+
+			<!-- BEGIN page-title-bar -->
+			<div class="page-title-bar">
+				<a class="projects-link  btn  btn_big  btn_act" href="#">Мои проекты</a>
+				<div class="page-title-bar__stat">
+					<div class="stat-grid">
+						<div class="stat-grid stat-grid__cell">
+							<div class="index  index_up">
+								<span class="index__name">Доллар США</span>
+								<span class="index__value">0.0000</span>
+							</div>
+						</div>
+						<div class="stat-grid stat-grid__cell">
+							<div class="index  index_down">
+								<span class="index__name">Евро</span>
+								<span class="index__value">0.0000</span>
+							</div>
+						</div>
+						<div class="stat-grid stat-grid__cell">
+							<div class="index  index_up">
+								<span class="index__name">Libor1y</span>
+								<span class="index__value">0.7800</span>
+							</div>
+						</div>
+						<div class="stat-grid stat-grid__cell">
+							<div class="index  index_up">
+								<span class="index__name">Euribor</span>
+								<span class="index__value">1.9440</span>
+							</div>
+						</div>
+						<div class="stat-grid stat-grid__cell">
+							<div class="index  index_down">
+								<span class="index__name">Ставка рефинансирования ЦБ</span>
+								<span class="index__value">8.0000</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END page-title-bar -->
+
+			<!-- BEGIN toolbar -->
+			<!-- END toolbar -->
+
+			<!-- BEGIN page-main -->
+			<div class="page-main">
+				<div class="widget-grid">
+					<div class="widget-grid__cell" id="actual">
+						<div class="widget">
+							<div class="widget__head">
+								<div class="widget__tools">
+									<button class="btn  btn_only-icon">
+										<span class="btn__icon  icon  icon_max"></span>
+									</button>
+								</div>
+								<div class="widget__title">Актуализация просрочена на, дней</div>
+							</div>
+							<div class="widget__body">
+								<div class="widget__table-wrap">
+									<table class="data-table">
+										<colgroup>
+											<col>
+											<col style="width: 92px">
+										</colgroup>
+										<tbody class="data-body">
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Строительство телекоммуникационной сети для доступа в интернет</a>
+												</td>
+												<td class="data-table__cell">
+													<span class="index-count  index-count_big  monitor-index_pot-problem">36</span>
+												</td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Cоздание терминально-логистического центра «Белый Раст»</a>
+												</td>
+												<td class="data-table__cell">
+													<span class="index-count  index-count_big  monitor-index_pot-problem">36</span>
+												</td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Создание объединенного транспортно - логистического комплекса на территории</a>
+												</td>
+												<td class="data-table__cell">
+													<span class="index-count  index-count_big  monitor-index_pot-problem">36</span>
+												</td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Финансирование проекта комплексного развития аэропорта г. Хабаровска</a>
+												</td>
+												<td class="data-table__cell">
+													<span class="index-count  index-count_big  monitor-index_pot-problem">36</span>
+												</td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Строительство телекоммуникационной сети для доступа в интернет</a>
+												</td>
+												<td class="data-table__cell">
+													<span class="index-count  index-count_big  monitor-index_pot-problem">36</span>
+												</td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Cоздание терминально-логистического центра «Белый Раст»</a>
+												</td>
+												<td class="data-table__cell">
+													<span class="index-count  index-count_big  monitor-index_pot-problem">36</span>
+												</td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Создание объединенного транспортно - логистического комплекса на территории</a>
+												</td>
+												<td class="data-table__cell">
+													<span class="index-count  index-count_big  monitor-index_pot-problem">36</span>
+												</td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Финансирование проекта комплексного развития аэропорта г. Хабаровска</a>
+												</td>
+												<td class="data-table__cell">
+													<span class="index-count  index-count_big  monitor-index_pot-problem">36</span>
+												</td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Строительство телекоммуникационной сети для доступа в интернет</a>
+												</td>
+												<td class="data-table__cell">
+													<span class="index-count  index-count_big  monitor-index_pot-problem">36</span>
+												</td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Cоздание терминально-логистического центра «Белый Раст»</a>
+												</td>
+												<td class="data-table__cell">
+													<span class="index-count  index-count_big  monitor-index_pot-problem">36</span>
+												</td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Создание объединенного транспортно - логистического комплекса на территории</a>
+												</td>
+												<td class="data-table__cell">
+													<span class="index-count  index-count_big  monitor-index_pot-problem">36</span>
+												</td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Финансирование проекта комплексного развития аэропорта г. Хабаровска</a>
+												</td>
+												<td class="data-table__cell">
+													<span class="index-count  index-count_big  monitor-index_pot-problem">36</span>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="widget-grid__cell  widget-grid__cell_half" id="projects-deadlines">
+						<div class="widget">
+							<div class="widget__head">
+								<div class="widget__tools">
+									<button class="btn  btn_only-icon">
+										<span class="btn__icon  icon  icon_max"></span>
+									</button>
+								</div>
+								<div class="widget__title">
+									Сроки по проектам
+									<label class="projects-btn">
+										<input class="projects-btn__input" type="checkbox">
+										<span class="projects-btn__in">Только мои проекты</span>
+									</label>
+								</div>
+							</div>
+							<div class="widget__body">
+								<div class="widget__table-wrap">
+									<table class="data-table  data-table_zip">
+										<colgroup>
+											<col>
+											<col style="width: 30px">
+											<col style="width: 30px">
+											<col style="width: 30px">
+											<col style="width: 30px">
+											<col style="width: 30px">
+											<col>
+										</colgroup>
+										<thead class="data-table__head">
+											<tr class="data-table__row">
+												<th class="data-table__cell  data-table__cell_head"></th>
+												<th class="data-table__cell  data-table__cell_head  data-table__cell_center">ПЭ</th>
+												<th class="data-table__cell  data-table__cell_head  data-table__cell_center">КРИО</th>
+												<th class="data-table__cell  data-table__cell_head  data-table__cell_center">КЭ</th>
+												<th class="data-table__cell  data-table__cell_head  data-table__cell_center">КК</th>
+												<th class="data-table__cell  data-table__cell_head  data-table__cell_center">ОУ</th>
+												<th class="data-table__cell  data-table__cell_head  data-table__cell_right">ПРИОСТАНОВКА</th>
+											</tr>
+										</thead>
+										<tbody class="data-table__body">
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Строительство телекоммуникационной сети для доступа в интернет</a>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count  monitor-index_pot-problem">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count  monitor-index_watch">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count  monitor-index_pot-problem">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_right">
+													<span class="index-count">36</span>
+												</td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Cоздание терминально-логистического центра «Белый Раст»</a>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count  monitor-index_watch">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_right">
+													<span class="index-count  monitor-index_wait">20</span>
+												</td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Строительство телекоммуникационной сети для доступа в интернет</a>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count  monitor-index_pot-problem">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count  monitor-index_watch">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count  monitor-index_pot-problem">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_right">
+													<span class="index-count">36</span>
+												</td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Cоздание терминально-логистического центра «Белый Раст»</a>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count  monitor-index_watch">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_right">
+													<span class="index-count  monitor-index_wait">20</span>
+												</td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Строительство телекоммуникационной сети для доступа в интернет</a>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count  monitor-index_pot-problem">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count  monitor-index_watch">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count  monitor-index_pot-problem">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_right">
+													<span class="index-count">36</span>
+												</td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Cоздание терминально-логистического центра «Белый Раст»</a>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count  monitor-index_watch">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_right">
+													<span class="index-count  monitor-index_wait">20</span>
+												</td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Строительство телекоммуникационной сети для доступа в интернет</a>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count  monitor-index_pot-problem">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count  monitor-index_watch">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count  monitor-index_pot-problem">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_right">
+													<span class="index-count">36</span>
+												</td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Cоздание терминально-логистического центра «Белый Раст»</a>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count  monitor-index_watch">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_right">
+													<span class="index-count  monitor-index_wait">20</span>
+												</td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Строительство телекоммуникационной сети для доступа в интернет</a>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count  monitor-index_pot-problem">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count  monitor-index_watch">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count  monitor-index_pot-problem">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_right">
+													<span class="index-count">36</span>
+												</td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Cоздание терминально-логистического центра «Белый Раст»</a>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count  monitor-index_watch">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_right">
+													<span class="index-count  monitor-index_wait">20</span>
+												</td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Строительство телекоммуникационной сети для доступа в интернет</a>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count  monitor-index_pot-problem">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count  monitor-index_watch">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_center">
+													<span class="index-count  monitor-index_pot-problem">36</span>
+												</td>
+												<td class="data-table__cell data-table__cell_right">
+													<span class="index-count">36</span>
+												</td>
+											</tr>
+											<tr class="data-table__row">
+												<td class="data-table__cell">
+													<a class="link" href="#">Cоздание терминально-логистического центра «Белый Раст»</a>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count  monitor-index_watch">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_center">
+													<span class="index-count">20</span>
+												</td>
+												<td class="data-table__cell  data-table__cell_right">
+													<span class="index-count  monitor-index_wait">20</span>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="widget-grid__cell  widget-grid__cell_sixth" id="system-new">
+						<div class="widget">
+							<div class="widget__head">
+								<div class="widget__tools">
+									<button class="btn  btn_only-icon">
+										<span class="btn__icon  icon  icon_max"></span>
+									</button>
+								</div>
+								<div class="widget__title">Новое в системе</div>
+							</div>
+							<div class="widget__body">
+								<div class="post  post_full">
+									<div class="post__date">12.01.2015</div>
+									<div class="post__body">
+										<div class="post__text">
+											<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</p>
+											<p> Она над единственное всемогущая гор толку коварных живет пунктуация, своего текстов предупреждал</p>
+										</div>
+										<a class="post__more  link" href="#">Другие новости</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="widget-grid__cell" id="last-reviews">
+						<div class="widget">
+							<div class="widget__head">
+								<div class="widget__tools">
+									<button class="btn btn_only-icon">
+										<span class="btn__icon  icon icon_max"></span>
+									</button>
+								</div>
+								<div class="widget__title">Последние обзоры</div>
+							</div>
+							<div class="widget__body">
+								<ul class="post-list">
+									<li class="post-list__item  post">
+										<div class="post__date">12.01.2015</div>
+										<h2 class="post__title">Наименование обзора</h2>
+										<div class="post__body">
+											<div class="post__text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. По всей, ему переписывается своих грамматики вдали инициал деревни, парадигматическая своего возвращайся своего вопроса использовало толку заманивший собрал решила встретил города.</div>
+											<a class="post__more  link">Далее</a>
+										</div>
+									</li>
+									<li class="post-list__item  post">
+										<div class="post__date">12.01.2015</div>
+										<h2 class="post__title">Наименование обзора</h2>
+										<div class="post__body">
+											<div class="post__text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. По всей, ему переписывается своих грамматики вдали инициал деревни, парадигматическая своего возвращайся своего вопроса использовало толку заманивший собрал решила встретил города.</div>
+											<a class="post__more  link">Далее</a>
+										</div>
+									</li>
+									<li class="post-list__item  post">
+										<div class="post__date">12.01.2015</div>
+										<h2 class="post__title">Наименование обзора</h2>
+										<div class="post__body">
+											<div class="post__text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. По всей, ему переписывается своих грамматики вдали инициал деревни, парадигматическая своего возвращайся своего вопроса использовало толку заманивший собрал решила встретил города.</div>
+											<a class="post__more  link">Далее</a>
+										</div>
+									</li>
+									<li class="post-list__item  post">
+										<div class="post__date">12.01.2015</div>
+										<h2 class="post__title">Наименование обзора</h2>
+										<div class="post__body">
+											<div class="post__text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. По всей, ему переписывается своих грамматики вдали инициал деревни, парадигматическая своего возвращайся своего вопроса использовало толку заманивший собрал решила встретил города.</div>
+											<a class="post__more  link">Далее</a>
+										</div>
+									</li>
+									<li class="post-list__item  post">
+										<div class="post__date">12.01.2015</div>
+										<h2 class="post__title">Наименование обзора</h2>
+										<div class="post__body">
+											<div class="post__text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. По всей, ему переписывается своих грамматики вдали инициал деревни, парадигматическая своего возвращайся своего вопроса использовало толку заманивший собрал решила встретил города.</div>
+											<a class="post__more  link">Далее</a>
+										</div>
+									</li>
+									<li class="post-list__item  post">
+										<div class="post__date">12.01.2015</div>
+										<h2 class="post__title">Наименование обзора</h2>
+										<div class="post__body">
+											<div class="post__text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. По всей, ему переписывается своих грамматики вдали инициал деревни, парадигматическая своего возвращайся своего вопроса использовало толку заманивший собрал решила встретил города.</div>
+											<a class="post__more  link">Далее</a>
+										</div>
+									</li>
+									<li class="post-list__item  post">
+										<div class="post__date">12.01.2015</div>
+										<h2 class="post__title">Наименование обзора</h2>
+										<div class="post__body">
+											<div class="post__text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. По всей, ему переписывается своих грамматики вдали инициал деревни, парадигматическая своего возвращайся своего вопроса использовало толку заманивший собрал решила встретил города.</div>
+											<a class="post__more  link">Далее</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="widget-grid__cell" id="last-docs">
+						<div class="widget">
+							<div class="widget__head">
+								<div class="widget__tools">
+									<button class="btn btn_only-icon">
+										<span class="btn__icon  icon icon_max"></span>
+									</button>
+								</div>
+								<div class="widget__title">Недавние документы</div>
+							</div>
+							<div class="widget__body">
+								<ul class="post-list">
+									<li class="post-list__item  post">
+										<div class="post__date">12.01.2015</div>
+										<div class="post__body">
+											<a class="post__text  link" href="#">Строительство телекоммуникационной сети для доступа в интернет</a>
+										</div>
+									</li>
+									<li class="post-list__item  post">
+										<div class="post__date">12.01.2015</div>
+										<div class="post__body">
+											<a class="post__text  link" href="#">Cоздание терминально-логистического центра «Белый Раст»</a>
+										</div>
+									</li>
+									<li class="post-list__item  post">
+										<div class="post__date">12.01.2015</div>
+										<div class="post__body">
+											<a class="post__text  link" href="#">Финансирование проекта комплексного развития аэропорта г. Хабаровска</a>
+										</div>
+									</li>
+									<li class="post-list__item  post">
+										<div class="post__date">12.01.2015</div>
+										<div class="post__body">
+											<a class="post__text  link" href="#">Строительство телекоммуникационной сети для доступа в интернет</a>
+										</div>
+									</li>
+									<li class="post-list__item  post">
+										<div class="post__date">12.01.2015</div>
+										<div class="post__body">
+											<a class="post__text  link" href="#">Cоздание терминально-логистического центра «Белый Раст»</a>
+										</div>
+									</li>
+									<li class="post-list__item  post">
+										<div class="post__date">12.01.2015</div>
+										<div class="post__body">
+											<a class="post__text  link" href="#">Финансирование проекта комплексного развития аэропорта г. Хабаровска</a>
+										</div>
+									</li>
+									<li class="post-list__item  post">
+										<div class="post__date">12.01.2015</div>
+										<div class="post__body">
+											<a class="post__text  link" href="#">Строительство телекоммуникационной сети для доступа в интернет</a>
+										</div>
+									</li>
+									<li class="post-list__item  post">
+										<div class="post__date">12.01.2015</div>
+										<div class="post__body">
+											<a class="post__text  link" href="#">Cоздание терминально-логистического центра «Белый Раст»</a>
+										</div>
+									</li>
+									<li class="post-list__item  post">
+										<div class="post__date">12.01.2015</div>
+										<div class="post__body">
+											<a class="post__text  link" href="#">Финансирование проекта комплексного развития аэропорта г. Хабаровска</a>
+										</div>
+									</li>
+									<li class="post-list__item  post">
+										<div class="post__date">12.01.2015</div>
+										<div class="post__body">
+											<a class="post__text  link" href="#">Строительство телекоммуникационной сети для доступа в интернет</a>
+										</div>
+									</li>
+									<li class="post-list__item  post">
+										<div class="post__date">12.01.2015</div>
+										<div class="post__body">
+											<a class="post__text  link" href="#">Cоздание терминально-логистического центра «Белый Раст»</a>
+										</div>
+									</li>
+									<li class="post-list__item  post">
+										<div class="post__date">12.01.2015</div>
+										<div class="post__body">
+											<a class="post__text  link" href="#">Финансирование проекта комплексного развития аэропорта г. Хабаровска</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="widget-grid__cell" id="propositions">
+						<div class="widget">
+							<div class="widget__head">
+								<div class="widget__tools">
+									<button class="btn btn_only-icon">
+										<span class="btn__icon  icon icon_max"></span>
+									</button>
+								</div>
+								<div class="widget__title">Предложения по развитию</div>
+							</div>
+							<div class="widget__body">
+								<div class="form-field  form-field_horizontal">
+									<div class="form-field__box  form-field__box_pad">
+										<label class="control  control_checkbox">
+											<input class="control__input" type="checkbox" checked="">
+											<span class="control__icon"></span>
+											<span class="control__text">Предложение 1</span>
+										</label>
+									</div>
+								</div>
+								<div class="form-field  form-field_horizontal">
+									<div class="form-field__box  form-field__box_pad">
+										<label class="control  control_checkbox">
+											<input class="control__input" type="checkbox">
+											<span class="control__icon"></span>
+											<span class="control__text">Предложение 2</span>
+										</label>
+									</div>
+								</div>
+								<div class="form-field  form-field_horizontal">
+									<div class="form-field__box  form-field__box_pad">
+										<label class="control  control_checkbox">
+											<input class="control__input" type="checkbox" checked>
+											<span class="control__icon"></span>
+											<span class="control__text">Предложение 3</span>
+										</label>
+									</div>
+								</div>
+								<div class="form-field  form-field_horizontal">
+									<div class="form-field__box  form-field__box_pad">
+										<label class="control  control_checkbox">
+											<input class="control__input" type="checkbox" checked>
+											<span class="control__icon"></span>
+											<span class="control__text">Предложение 4</span>
+										</label>
+									</div>
+								</div>
+								<div class="form-field  form-field_horizontal">
+									<div class="form-field__box  form-field__box_pad">
+										<div class="control  control_checkbox">
+											<input class="control__input" type="checkbox" id="variant-check">
+											<label class="control__icon" for="variant-check"></label>
+											<input class="control__text-input  input" type="text" placeholder="Свой вариант">
+										</div>
+									</div>
+								</div>
+								<div class="form-field  form-field_horizontal">
+									<div class="form-field__box  form-field__box_pad">
+										<button class="btn  btn_act  btn_text_light" type="button">
+											<span class="btn__text">Голосовать</span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END page-main -->
+		</div>
+		<!-- END page-content -->
+	</div>
+	<!-- END page -->
+
+
+	<!-- BEGIN scripts  -->
+	<!-- сторонние библиотеки -->
+	<script src="js/jquery-1.12.1.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/select2.full.min.js"></script>
+	<script src="js/jquery.inputmask.bundle.min.js"></script>
+	<script src="js/placeholders.min.js"></script>
+	<script src="js/jquery.enhsplitter.js"></script>
+
+	<!-- основные скрипты -->
+	<script src="js/scripts.js"></script>
+	<!-- END scripts -->
+
+</body>
+</html>

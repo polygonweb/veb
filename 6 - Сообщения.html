@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]><html class="no-js ie ltie8 ltie9 ltie10" lang="ru"><![endif]-->
+<!--[if IE 8]><html class="no-js ie ie8 ltie9 ltie10" lang="ru"><![endif]-->
+<!--[if IE 9]><html class="no-js ie gtie8 ie9 ltie10" lang="ru"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="no-js" lang="ru"><!--><![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- нормализация дефолтных стилей браузеров -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<!-- стилизация выпадающих списков select2 -->
+	<link rel="stylesheet" href="css/select2.css">
+	<link rel="stylesheet" href="css/jquery.enhsplitter.css">
+	<!-- основные стили -->
+	<link rel="stylesheet" href="css/main.css">
+
+	<!-- проверка поддержки свойств в разных браузерах. https://modernizr.com -->
+	<script src="js/modernizr-custom.js"></script>
+	<!-- поддержка html5-тегов, css3-селекторов, медиа-запросов в IE<=8 -->
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.min.js"></script>
+		<script src="js/nwmatcher-1.2.5.js"></script>
+		<script src="js/selectivizr-min.js"></script>
+		<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	<title>СПАиМИП</title>
+</head>
+<body>
+
+	<!-- BEGIN page  -->
+	<div class="page">
+		<!-- BEGIN page-header -->
+		<div class="page-header">
+			<a class="page-header__item  page-header__logo  logo" href="">
+				<span class="logo__text">
+					<span class="logo__company">Внешэкономбанк</span>
+					<span class="logo__system">Система планирования, анализа и мониторинга инвестиционных проектов</span>
+				</span>
+			</a>
+
+			<!-- BEGIN user -->
+			<div class="page-header__item  page-header__user  drop  drop_pos_right" id="user-drop">
+				<div class="user  drop__trigger">
+					<span class="user__data">
+						<span class="user__surname">Константинопольский</span>
+						<span class="user__name">Александр</span>
+					</span>
+					<a class="user__logout" href="#" title="Выйти"></a>
+				</div>
+				<div class="drop__content">
+					<ul class="list  list_nowrap">
+						<li class="list__item">
+							<a class="list__link" href="#">Личный кабинет</a>
+						</li>
+						<li class="list__item">
+							<a class="list__link" href="#">Сменить пароль</a>
+						</li>
+						<li class="list__item">
+							<a class="list__link" href="#">Выйти</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- END user -->
+
+			<div class="page-header__item  page-header__toolbar">
+				<ul class="user-toolbar">
+					<li class="user-toolbar__item">
+						<a class="user-toolbar__link" href="#" title="">
+							<img class="user-toolbar__icon" src="img/toolbar-help.png" alt="">
+						</a>
+					</li>
+					<li class="user-toolbar__item  drop  drop_pos_right  drop_open" id="notif-messages">
+						<a class="user-toolbar__link  drop__trigger" href="#" title="">
+							<img class="user-toolbar__icon" src="img/toolbar-messages.png" alt="">
+							<span class="user-toolbar__count  count">3</span>
+						</a>
+						<div class="drop__content">
+							<div class="messages-list  messages-list_indrop">
+								<div class="messages-list__head">
+									<a class="link  link_with-icon" href="#">
+										<span class="link__icon icon  icon_delete-small"></span>
+										<span class="link__text">Удалить все уведомления</span>
+									</a>
+								</div>
+								<ul class="messages-list__body">
+									<li class="messages-list__item">
+										<a class="message-preview  message-preview_unread" href="#">
+											<span class="message-preview__main">
+												<span class="message-preview__meta">
+													<span class="message-preview__date">20 нояб. 2015</span>
+													<span class="message-preview__from">[СЛУЖЕБНЫЙ] -.-.</span>
+												</span>
+												<span class="message-preview__topic">Уведомление о создании нового документа Кредит от 29.10.2015</span>
+											</span>
+											<span class="message-preview__tools">
+												<button class="message-preview__btn  btn  btn_only-icon" title="Удалить уведомление">
+													<span class="btn__icon  icon  icon_delete-small"></span>
+												</button>
+												<button class="message-preview__btn  btn  btn_only-icon">
+													<span class="btn__icon  icon  icon_close"></span>
+												</button>
+											</span>
+										</a>
+									</li>
+									<li class="messages-list__item">
+										<a class="message-preview  message-preview_unread" href="#">
+											<span class="message-preview__main">
+												<span class="message-preview__meta">
+													<span class="message-preview__date">20 нояб. 2015</span>
+													<span class="message-preview__from">[СЛУЖЕБНЫЙ] -.-.</span>
+												</span>
+												<span class="message-preview__topic">Уведомление о создании нового документа Кредит от 29.10.2015</span>
+											</span>
+											<span class="message-preview__tools">
+												<button class="message-preview__btn  btn  btn_only-icon" title="Удалить уведомление">
+													<span class="btn__icon  icon  icon_delete-small"></span>
+												</button>
+												<button class="message-preview__btn  btn  btn_only-icon">
+													<span class="btn__icon  icon  icon_close"></span>
+												</button>
+											</span>
+										</a>
+									</li>
+									<li class="messages-list__item">
+										<a class="message-preview  message-preview_unread" href="#">
+											<span class="message-preview__main">
+												<span class="message-preview__meta">
+													<span class="message-preview__date">20 нояб. 2015</span>
+													<span class="message-preview__from">[СЛУЖЕБНЫЙ] -.-.</span>
+												</span>
+												<span class="message-preview__topic">Уведомление о создании нового документа Кредит от 29.10.2015</span>
+											</span>
+											<span class="message-preview__tools">
+												<button class="message-preview__btn  btn  btn_only-icon" title="Удалить уведомление">
+													<span class="btn__icon  icon  icon_delete-small"></span>
+												</button>
+												<button class="message-preview__btn  btn  btn_only-icon">
+													<span class="btn__icon  icon  icon_close"></span>
+												</button>
+											</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="user-toolbar__item  user-toolbar__item_drop">
+						<a class="user-toolbar__link" href="#" title="">
+							<img class="user-toolbar__icon" src="img/toolbar-docs.png" alt="">
+						</a>
+					</li>
+					<li class="user-toolbar__item">
+						<a class="user-toolbar__link" href="#" title="" id="searchTriggerId">
+							<img class="user-toolbar__icon" src="img/toolbar-search.png" alt="">
+						</a>
+						<form class="search-form" id="searchFormId">
+							<div class="search-form__field  field-box">
+								<input class="field-box__input  input" type="text" placeholder="Поиск">
+								<button class="field-box__btn  field-box__btn_search" type="button"></button>
+							</div>
+						</form>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- END page-header -->
+
+
+		<!-- BEGIN page-menu -->
+		<div class="page-menu">
+			<ul class="page-menu__in">
+				<li class="page-menu__item  page-menu__item_active">
+					<a class="page-menu__link" href="#" title="Реестр документов">
+						<span class="page-menu__icon  page-menu__icon_reestr"></span>
+						<span class="page-menu__text">Реестр документов</span>
+					</a>
+				</li>
+				<li class="page-menu__item">
+					<a class="page-menu__link" href="#" title="Задачи">
+						<span class="page-menu__icon  page-menu__icon_tasks"></span>
+						<span class="page-menu__text">
+							Задачи
+						</span>
+						<span class="page-menu__count  count">2</span>
+					</a>
+				</li>
+				<li class="page-menu__item">
+					<a class="page-menu__link" href="#" title="Планы бизнес-показателей">
+						<span class="page-menu__icon  page-menu__icon_plans"></span>
+						<span class="page-menu__text">Планы бизнес-показателей</span>
+					</a>
+				</li>
+				<li class="page-menu__item">
+					<a class="page-menu__link" href="#" title="Пользовательские отчеты">
+						<span class="page-menu__icon  page-menu__icon_reports"></span>
+						<span class="page-menu__text">
+							Пользовательские отчеты
+						</span>
+						<span class="page-menu__count  count">37</span>
+					</a>
+				</li>
+				<li class="page-menu__item  drop  drop_pos_right" id="help-docs-menu">
+					<a class="page-menu__link  drop__trigger" href="#" title="Справочные материалы">
+						<span class="page-menu__icon  page-menu__icon_dicts"></span>
+						<span class="page-menu__text">Справочные материалы</span>
+					</a>
+					<div class="drop__content">
+						<ul class="list  list_nowrap">
+							<li class="list__item">
+								<a class="list__link" href="#">Информационно-аналитические материалы</a>
+							</li>
+							<li class="list__item">
+								<a class="list__link" href="#">Социально-экономическая информация</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- END page-menu -->
+
+
+		<!-- BEGIN page-content -->
+		<div class="page-content">
+
+			<!-- BEGIN page-title-bar -->
+			<!-- END page-title-bar -->
+
+			<!-- BEGIN toolbar -->
+			<div class="toolbar">
+				<div class="toolbar__part  toolbar__part_right" id="filterBlock">
+					<button class="tool  btn  btn_big  btn_only-icon" title="Ответить">
+						<span class="btn__icon  icon icon_reply"></span>
+					</button>
+					<button class="tool  btn  btn_big  btn_only-icon" title="Переслать">
+						<span class="btn__icon  icon icon_forward"></span>
+					</button>
+					<button class="tool  btn  btn_big  btn_only-icon" title="Обновить">
+						<span class="btn__icon  icon icon_update"></span>
+					</button>
+					<button class="tool  btn  btn_big  btn_only-icon" title="Удалить">
+						<span class="btn__icon  icon icon_delete"></span>
+					</button>
+				</div>
+
+				<div class="toolbar__part">
+					<button class="tool  btn  create-btn">
+						<span class="btn__icon  icon  icon_edit-small"></span>
+						<span class="btn__text">Новое сообщение</span>
+					</button>
+				</div>
+			</div>
+			<!-- END toolbar -->
+
+			<!-- BEGIN page-main -->
+			<div class="page-main">
+
+				<!-- BEGIN .message-container  -->
+				<div class="messages-container">
+					<!-- BEGIN menu-layout -->
+					<div class="menu-layout  menu-layout_stretch  menu-layout_open">
+						<div class="menu-layout__side">
+							<!-- BEGIN menu-list -->
+							<div class="menu-list">
+								<a class="menu-list__item  menu-layout__toggle" href="#" title="Открыть/закрыть панель">
+									<span class="menu-list__icon  menu-list__icon_toggle"></span>
+								</a>
+								<a class="menu-list__item" href="#" title="Входящие">
+									<span class="menu-list__icon  menu-list__icon_incoming"></span>
+									<span class="menu-list__count">78</span>
+									<span class="menu-list__text">Входящие</span>
+								</a>
+								<a class="menu-list__item  menu-list__item_active" href="#" title="Документы">
+									<span class="menu-list__icon  menu-list__icon_docs"></span>
+									<span class="menu-list__count">2</span>
+									<span class="menu-list__text">Документы</span>
+								</a>
+								<a class="menu-list__item" href="#" title="Мониторинг">
+									<span class="menu-list__icon  menu-list__icon_monitor"></span>
+									<span class="menu-list__text">Мониторинг</span>
+								</a>
+								<a class="menu-list__item" href="#" title="Отправленные">
+									<span class="menu-list__icon  menu-list__icon_send"></span>
+									<span class="menu-list__text">Отправленные</span>
+								</a>
+								<a class="menu-list__item" href="#" title="Удаленные">
+									<span class="menu-list__icon  menu-list__icon_del"></span>
+									<span class="menu-list__text">Удаленные</span>
+								</a>
+							</div>
+							<!-- END menu-list -->
+						</div>
+						<div class="menu-layout__main">
+							<div class="messages-view" id="messages-view">
+								<div class="messages-view__side">
+									<div class="messages-list">
+										<div class="messages-list__head">
+											<a class="link" href="#">Пометить все как прочитанное</a>
+
+											<div class="messages-list__search">
+												<button class="btn  btn_only-icon" type="button">
+													<span class="btn__icon  icon  icon_search"></span>
+												</button>
+											</div>
+										</div>
+
+										<ul class="messages-list__body">
+											<li class="messages-list__item">
+												<a class="message-preview  message-preview_active" href="#">
+													<span class="message-preview__icon"></span>
+													<span class="message-preview__main">
+														<span class="message-preview__meta">
+															<span class="message-preview__date">20 нояб. 2015</span>
+															<span class="message-preview__from">[СЛУЖЕБНЫЙ] -.-.</span>
+														</span>
+														<span class="message-preview__topic">Уведомление о создании нового документа Кредит от 29.10.2015</span>
+													</span>
+												</a>
+											</li>
+											<li class="messages-list__item">
+												<a class="message-preview  message-preview_unread" href="#">
+													<span class="message-preview__icon"></span>
+													<span class="message-preview__main">
+														<span class="message-preview__meta">
+															<span class="message-preview__date">20 нояб. 2015</span>
+															<span class="message-preview__from">[СЛУЖЕБНЫЙ] -.-.</span>
+														</span>
+														<span class="message-preview__topic">Уведомление о создании нового документа Кредит от 29.10.2015</span>
+													</span>
+												</a>
+											</li>
+											<li class="messages-list__item">
+												<a class="message-preview  message-preview_active" href="#">
+													<span class="message-preview__icon"></span>
+													<span class="message-preview__main">
+														<span class="message-preview__meta">
+															<span class="message-preview__date">20 нояб. 2015</span>
+															<span class="message-preview__from">[СЛУЖЕБНЫЙ] -.-.</span>
+														</span>
+														<span class="message-preview__topic">Уведомление о создании нового документа Кредит от 29.10.2015</span>
+													</span>
+												</a>
+											</li>
+											<li class="messages-list__item">
+												<a class="message-preview  message-preview_unread" href="#">
+													<span class="message-preview__icon"></span>
+													<span class="message-preview__main">
+														<span class="message-preview__meta">
+															<span class="message-preview__date">20 нояб. 2015</span>
+															<span class="message-preview__from">[СЛУЖЕБНЫЙ] -.-.</span>
+														</span>
+														<span class="message-preview__topic">Уведомление о создании нового документа Кредит от 29.10.2015</span>
+													</span>
+												</a>
+											</li>
+											<li class="messages-list__item">
+												<a class="message-preview  message-preview_active" href="#">
+													<span class="message-preview__icon"></span>
+													<span class="message-preview__main">
+														<span class="message-preview__meta">
+															<span class="message-preview__date">20 нояб. 2015</span>
+															<span class="message-preview__from">[СЛУЖЕБНЫЙ] -.-.</span>
+														</span>
+														<span class="message-preview__topic">Уведомление о создании нового документа Кредит от 29.10.2015</span>
+													</span>
+												</a>
+											</li>
+											<li class="messages-list__item">
+												<a class="message-preview  message-preview_unread" href="#">
+													<span class="message-preview__icon"></span>
+													<span class="message-preview__main">
+														<span class="message-preview__meta">
+															<span class="message-preview__date">20 нояб. 2015</span>
+															<span class="message-preview__from">[СЛУЖЕБНЫЙ] -.-.</span>
+														</span>
+														<span class="message-preview__topic">Уведомление о создании нового документа Кредит от 29.10.2015</span>
+													</span>
+												</a>
+											</li>
+											<li class="messages-list__item">
+												<a class="message-preview  message-preview_active" href="#">
+													<span class="message-preview__icon"></span>
+													<span class="message-preview__main">
+														<span class="message-preview__meta">
+															<span class="message-preview__date">20 нояб. 2015</span>
+															<span class="message-preview__from">[СЛУЖЕБНЫЙ] -.-.</span>
+														</span>
+														<span class="message-preview__topic">Уведомление о создании нового документа Кредит от 29.10.2015</span>
+													</span>
+												</a>
+											</li>
+											<li class="messages-list__item">
+												<a class="message-preview  message-preview_unread" href="#">
+													<span class="message-preview__icon"></span>
+													<span class="message-preview__main">
+														<span class="message-preview__meta">
+															<span class="message-preview__date">20 нояб. 2015</span>
+															<span class="message-preview__from">[СЛУЖЕБНЫЙ] -.-.</span>
+														</span>
+														<span class="message-preview__topic">Уведомление о создании нового документа Кредит от 29.10.2015</span>
+													</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="messages-view__main">
+									<div class="message">
+										<div class="message__head">
+											<div class="message__tools  drop  drop_pos_right" id="message-tools">
+												<button class="drop__trigger  btn  btn_only-icon">
+													<span class="btn__icon  icon  icon_v-dots"></span>
+												</button>
+												<div class="drop__content">
+													<ul class="list">
+														<li class="list__item">
+															<a class="list__link" href="#">
+																<span class="icon  icon_reply-small"></span>
+																Ответить
+															</a>
+														</li>
+														<li class="list__item">
+															<a class="list__link" href="#">
+																<span class="icon  icon_forward-small"></span>
+																Переслать
+															</a>
+														</li>
+														<li class="list__item">
+															<a class="list__link" href="#">
+																<span class="icon  icon_print-small"></span>
+																Распечатать
+															</a>
+														</li>
+														<li class="list__item">
+															<a class="list__link" href="#">
+																<span class="icon  icon_export-small"></span>
+																Скачать
+															</a>
+														</li>
+														<li class="list__item">
+															<a class="list__link" href="#">
+																<span class="icon  icon_delete-small"></span>
+																Удалить
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+
+											<h2 class="message__title">Уведомление о создании нового документа Кредит от 29.10.2015 №18</h2>
+
+											<div class="message__from">[СЛУЖЕБНЫЙ] -.-.</div>
+											<dl class="message-fields">
+												<dt class="message-fields__key">Отправлено</dt>
+												<dd class="message-fields__value">Пн. 15.02.2016 13:00</dd>
+
+												<dt class="message-fields__key">Кому</dt>
+												<dd class="message-fields__value">Иванов И.И</dd>
+											</dl>
+										</div>
+										<div class="message__body">
+											<div class="message__content">
+												<p>Здравствуйте, Иван!</p>
+												<p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки существенных финансовых и административных условий.</p>
+												<p>Таким образом начало повседневной работы по формированию позиции позволяет оценить значение существенных финансовых и административных условий. Значимость этих проблем настолько очевидна, что постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке модели развития.</p>
+												<p>С другой стороны новая модель организационной деятельности представляет собой интересный эксперимент проверки направлений прогрессивного развития. Равным образом постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке существенных финансовых и административных условий.</p>
+											</div>
+											<div class="message-editor">
+												<div class="message-editor__tool-panel">
+													<div class="message-editor__tools">
+														<a class="message-editor__tool" href="#">Ответить</a>,
+														<a class="message-editor__tool" href="#"> Ответить всем</a> или
+														<a class="message-editor__tool" href="#">Переслать</a>
+													</div>
+												</div>
+												<textarea class="message-editor__input  input"></textarea>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END menu-layout -->
+				</div>
+				<!-- END .message-container -->
+
+			</div>
+			<!-- END page-main -->
+		</div>
+		<!-- END page-content -->
+	</div>
+	<!-- END page -->
+
+
+	<!-- BEGIN scripts  -->
+	<!-- сторонние библиотеки -->
+	<script src="js/jquery-1.12.1.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/select2.full.min.js"></script>
+	<script src="js/jquery.inputmask.bundle.min.js"></script>
+	<script src="js/placeholders.min.js"></script>
+	<script src="js/jquery.enhsplitter.js"></script>
+
+	<!-- основные скрипты -->
+	<script src="js/scripts.js"></script>
+	<!-- END scripts -->
+
+</body>
+</html>

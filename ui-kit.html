@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]><html class="no-js ie ltie8 ltie9 ltie10" lang="ru"><![endif]-->
+<!--[if IE 8]><html class="no-js ie ie8 ltie9 ltie10" lang="ru"><![endif]-->
+<!--[if IE 9]><html class="no-js ie gtie8 ie9 ltie10" lang="ru"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="no-js" lang="ru"><!--><![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- нормализация дефолтных стилей браузеров -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<!-- стилизация выпадающих списков select2 -->
+	<link rel="stylesheet" href="css/select2.css">
+	<!-- основные стили -->
+	<link rel="stylesheet" href="css/main.css">
+
+	<!-- проверка поддержки свойств в разных браузерах. https://modernizr.com -->
+	<script src="js/modernizr-custom.js"></script>
+	<!-- поддержка html5-тегов, css3-селекторов, медиа-запросов в IE<=8 -->
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.min.js"></script>
+		<script src="js/nwmatcher-1.2.5.js"></script>
+		<script src="js/selectivizr-min.js"></script>
+		<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	<title>СПАиМИП</title>
+</head>
+<body>
+
+	<!-- BEGIN page  -->
+	<div class="page">
+		<!-- BEGIN page-header -->
+		<div class="page-header">
+			<a class="page-header__item  page-header__logo  logo" href="">
+				<span class="logo__text">
+					<span class="logo__company">Внешэкономбанк</span>
+					<span class="logo__system">Система планирования, анализа и мониторинга инвестиционных проектов</span>
+				</span>
+			</a>
+
+			<!-- BEGIN user -->
+			<div class="page-header__item  page-header__user  drop  drop_pos_right" id="user-drop">
+				<div class="user  drop__trigger">
+					<span class="user__data">
+						<span class="user__surname">Константинопольский</span>
+						<span class="user__name">Александр</span>
+					</span>
+					<a class="user__logout" href="#" title="Выйти"></a>
+				</div>
+				<div class="drop__content">
+					<ul class="list  list_nowrap">
+						<li class="list__item">
+							<a class="list__link" href="#">Личный кабинет</a>
+						</li>
+						<li class="list__item">
+							<a class="list__link" href="#">Сменить пароль</a>
+						</li>
+						<li class="list__item">
+							<a class="list__link" href="#">Выйти</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- END user -->
+
+			<div class="page-header__item  page-header__toolbar">
+				<ul class="user-toolbar">
+					<li class="user-toolbar__item">
+						<a class="user-toolbar__link" href="#" title="">
+							<img class="user-toolbar__icon" src="img/toolbar-help.png" alt="">
+						</a>
+					</li>
+					<li class="user-toolbar__item">
+						<a class="user-toolbar__link" href="#" title="">
+							<img class="user-toolbar__icon" src="img/toolbar-messages.png" alt="">
+							<span class="user-toolbar__count  count">2</span>
+						</a>
+					</li>
+					<li class="user-toolbar__item  user-toolbar__item_drop">
+						<a class="user-toolbar__link" href="#" title="">
+							<img class="user-toolbar__icon" src="img/toolbar-docs.png" alt="">
+						</a>
+					</li>
+					<li class="user-toolbar__item">
+						<a class="user-toolbar__link" href="#" title="" id="searchTriggerId">
+							<img class="user-toolbar__icon" src="img/toolbar-search.png" alt="">
+						</a>
+						<form class="search-form" id="searchFormId">
+							<div class="search-form__field  field-box">
+								<input class="field-box__input  input" type="text" placeholder="Поиск">
+								<button class="field-box__btn  field-box__btn_search" type="button"></button>
+							</div>
+						</form>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- END page-header -->
+
+
+		<!-- BEGIN page-menu -->
+		<div class="page-menu">
+			<ul class="page-menu__in">
+				<li class="page-menu__item  page-menu__item_active">
+					<a class="page-menu__link" href="#" title="Реестр документов">
+						<span class="page-menu__icon  page-menu__icon_reestr"></span>
+						<span class="page-menu__text">Реестр документов</span>
+					</a>
+				</li>
+				<li class="page-menu__item">
+					<a class="page-menu__link" href="#" title="Задачи">
+						<span class="page-menu__icon  page-menu__icon_tasks"></span>
+						<span class="page-menu__text">
+							Задачи
+						</span>
+						<span class="page-menu__count  count">2</span>
+					</a>
+				</li>
+				<li class="page-menu__item">
+					<a class="page-menu__link" href="#" title="Планы бизнес-показателей">
+						<span class="page-menu__icon  page-menu__icon_plans"></span>
+						<span class="page-menu__text">Планы бизнес-показателей</span>
+					</a>
+				</li>
+				<li class="page-menu__item">
+					<a class="page-menu__link" href="#" title="Пользовательские отчеты">
+						<span class="page-menu__icon  page-menu__icon_reports"></span>
+						<span class="page-menu__text">
+							Пользовательские отчеты
+						</span>
+						<span class="page-menu__count  count">37</span>
+					</a>
+				</li>
+				<li class="page-menu__item  drop  drop_pos_right" id="help-docs-menu">
+					<a class="page-menu__link  drop__trigger" href="#" title="Справочные материалы">
+						<span class="page-menu__icon  page-menu__icon_dicts"></span>
+						<span class="page-menu__text">Справочные материалы</span>
+					</a>
+					<div class="drop__content">
+						<ul class="list  list_nowrap">
+							<li class="list__item">
+								<a class="list__link" href="#">Информационно-аналитические материалы</a>
+							</li>
+							<li class="list__item">
+								<a class="list__link" href="#">Социально-экономическая информация</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- END page-menu -->
+
+
+		<!-- BEGIN page-content -->
+		<div class="page-content">
+
+			<!-- BEGIN page-title-bar -->
+			<div class="page-title-bar">
+				<h1 class="title">Реестр документов</h1>
+				<div class="page-title-bar__side">
+					<a class="link  link_with-icon" href="#">
+						<span class="link__icon icon  icon_delete"></span>
+						<span class="link__text">Удаленные документы</span>
+					</a>
+				</div>
+			</div>
+			<!-- END page-title-bar -->
+
+			<!-- BEGIN toolbar -->
+			<div class="toolbar">
+				<div class="toolbar__part  toolbar__part_right" id="filterBlock">
+					<div class="tool  tool_group  drop  drop_pos_right" id="search-filter">
+						<button class="tool__btn  btn" id="filterSearchFormTrigger">
+							<span class="btn__icon  icon  icon_search"></span>
+						</button>
+						<button class="tool__btn  btn  drop__trigger">
+							<span class="btn__icon  icon  icon_filter"></span>
+						</button>
+
+						<form class="filter-search" id="filterSearchForm">
+							<div class="filter-search__box  field-box">
+								<input class="filter-search__input  field-box__input  input" type="text" placeholder="Поиск">
+								<button class="filter-search__btn  field-box__btn  field-box__btn_search" type="submit"></button>
+							</div>
+						</form>
+
+						<form class="drop__content  filter-form">
+							<div class="form-field  form-field_horizontal">
+								<div class="form-field__title">Период</div>
+								<div class="form-field__box">
+									<div class="field-group">
+										<div class="field-group__item">
+											<div class="field-box  field-box_full  field-box_date">
+												<input class="field-box__input  input  js-datepicker" type="text" placeholder="дд.мм.гггг">
+											</div>
+										</div>
+										<div class="field-group__item  field-group__item_divider"></div>
+										<div class="field-group__item">
+											<div class="field-box  field-box_full  field-box_date">
+												<input class="field-box__input  input  js-datepicker" type="text" placeholder="дд.мм.гггг">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-field  form-field_horizontal">
+								<div class="form-field__box  form-field__box_pad">
+									<label class="control  control_checkbox">
+										<input class="control__input" type="checkbox" checked>
+										<span class="control__icon"></span>
+										<span class="control__text">Искать в досье</span>
+									</label>
+									<label class="control  control_checkbox">
+										<input class="control__input" type="checkbox">
+										<span class="control__icon"></span>
+										<span class="control__text">За все время</span>
+									</label>
+								</div>
+							</div>
+
+							<div class="form-field  form-field_horizontal">
+								<div class="form-field__title">Период</div>
+								<div class="form-field__box">
+									<select class="js-select" name="" id="" style="width: 100%">
+										<option value="">Инвестиционный проект</option>
+										<option selected value="">Инвестиционный кредит</option>
+										<option value="">Участие в капитале</option>
+										<option value="">Кредитное соглашение</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="form-field  form-field_horizontal">
+								<div class="form-field__title">Состояние</div>
+								<div class="form-field__box">
+									<select class="js-select" name="" id="" style="width: 100%">
+										<option value="Все">Все</option>
+										<option value="Новые">Новые</option>
+										<option selected="" value="На рассмотрении">На рассмотрении</option>
+										<option value="Проект одобрен Банком">Проект одобрен Банком</option>
+										<option value="Финансирование открыто">Финансирование открыто</option>
+										<option value="Финансирование завершено">Финансирование завершено</option>
+										<option value="Проект завершен (реализован)">Проект завершен (реализован)</option>
+										<option value="Проект завершен (реализован) и сделки закрыты">Проект завершен (реализован) и сделки закрыты</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="form-field  form-field_horizontal">
+								<div class="form-field__title">Менеджер</div>
+								<div class="form-field__box">
+									<select class="js-select" name="" id="" style="width: 100%">
+										<option value="Все">Все</option>
+										<option value="Оракл С.С.">Оракл С.С.</option>
+										<option selected="" value="Самоделкин А.А.">Самоделкин А.А.</option>
+										<option value="Поливайкин И.И.">Поливайкин И.И.</option>
+										<option value="Курочкин С.А.">Курочкин С.А.</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="form-field  form-field_horizontal">
+								<div class="form-field__title">Стоимость</div>
+								<div class="form-field__box">
+									<div class="field-group">
+										<div class="field-group__item">
+											<div class="field-box  field-box_full">
+												<input class="field-box__input  input  input_number" type="text" value="100 000 000" placeholder="">
+											</div>
+										</div>
+										<div class="field-group__item  field-group__item_divider"></div>
+										<div class="field-group__item">
+											<div class="field-box  field-box_full">
+												<input class="field-box__input  input  input_number" type="text" value="200 000 000 000" placeholder="">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-field  form-field_horizontal">
+								<div class="form-field__title">Валюта</div>
+								<div class="form-field__box">
+									<select class="js-select" name="" id="" style="width: 100%">
+										<option selected="" value="EUR">EUR</option>
+										<option value="USD">USD</option>
+										<option value="РУБ">РУБ</option>
+									</select>
+								</div>
+							</div>
+
+							<button class="filter-form__submit  btn  btn_act  btn_big" type="submit">
+								<span class="btn__text">Найти</span>
+							</button>
+						</form>
+					</div>
+				</div>
+
+				<div class="toolbar__part">
+					<div class="tool  drop  drop_pos_left" id="reestr-list">
+						<button class="tool__btn  btn  tool__btn_drop  drop__trigger">
+							<span class="btn__icon  icon  icon_add"></span>
+						</button>
+						<div class="drop__content">
+						<ul class="list  list_nowrap">
+							<li class="list__item"><a class="list__link" href="#">Первичное обращение</a></li>
+							<li class="list__item"><a class="list__link" href="#">Инвестиционный проект</a></li>
+							<li class="list__item"><a class="list__link" href="#">Инвестиционный кредит</a></li>
+							<li class="list__item"><a class="list__link" href="#">Аккредитив</a></li>
+							<li class="list__item"><a class="list__link" href="#">Участие в капитале</a></li>
+							<li class="list__item"><a class="list__link" href="#">Оферта</a></li>
+							<li class="list__item"><a class="list__link" href="#">Кредит</a></li>
+							<li class="list__item"><a class="list__link" href="#">Банковская гарантия</a></li>
+							<li class="list__item"><a class="list__link" href="#">Заявка на рефинансирование</a></li>
+							<li class="list__item"><a class="list__link" href="#">Обращение на рефинансирование</a></li>
+							<li class="list__item"><a class="list__link" href="#">Кредит на рефинансирование</a></li>
+							<li class="list__item"><a class="list__link" href="#">Лимиты</a></li>
+							<li class="list__item"><a class="list__link" href="#">Экспортный кредит</a></li>
+						</ul>
+						</div>
+					</div>
+					<div class="tool">
+						<button class="tool__btn  btn">
+							<span class="btn__icon  icon  icon_export"></span>
+						</button>
+					</div>
+					<div class="tool">
+						<button class="tool__btn  btn">
+							<span class="btn__icon  icon  icon_edit"></span>
+						</button>
+					</div>
+					<div class="tool">
+						<button class="tool__btn  btn">
+							<span class="btn__icon  icon  icon_update"></span>
+						</button>
+					</div>
+					<div class="tool">
+						<button class="tool__btn  btn">
+							<span class="btn__icon  icon  icon_deliver"></span>
+						</button>
+					</div>
+					<div class="tool">
+						<button class="tool__btn  btn">
+							<span class="btn__icon  icon  icon_delete"></span>
+						</button>
+					</div>
+					<div class="tool">
+						<button class="tool__btn  btn">
+							<span class="btn__icon  icon  icon_run"></span>
+						</button>
+					</div>
+					<div class="tool">
+						<button class="tool__btn  btn">
+							<span class="btn__icon  icon  icon_new"></span>
+						</button>
+					</div>
+					<div class="tool">
+						<button class="tool__btn  btn" disabled>
+							<span class="btn__icon  icon  icon_settings"></span>
+						</button>
+					</div>
+					<div class="tool">
+						<button class="tool__btn  btn" disabled>
+							<span class="btn__icon  icon  icon_doc1"></span>
+						</button>
+					</div>
+					<div class="tool">
+						<button class="tool__btn  tool__btn_drop  btn" disabled>
+							<span class="btn__icon  icon  icon_doc2"></span>
+						</button>
+					</div>
+				</div>
+
+				<div class="toolbar__part">
+					<label class="toolbar-toggle">
+						<input class="toolbar-toggle__input" type="checkbox" name="" id="">
+						Свернуть/развернуть
+					</label>
+
+					<div class="toolbar__control-group  control-group">
+						<input class="control-group__input "type="radio" name="IP-PO" id="IP">
+						<label class="control-group__btn" for="IP">ИП</label>
+						<input class="control-group__input "type="radio" name="IP-PO" id="PO" checked>
+						<label class="control-group__btn" for="PO">ПО</label>
+					</div>
+					<div class="toolbar__control-group  control-group">
+						<input class="control-group__input "type="radio" name="active" id="active" checked>
+						<label class="control-group__btn" for="active">А<span class="control-group__tail">ктивные</span></label>
+						<input class="control-group__input "type="radio" name="active" id="not-active">
+						<label class="control-group__btn" for="not-active">Н<span class="control-group__tail">еактивные</span></label>
+					</div>
+				</div>
+			</div>
+			<!-- END toolbar -->
+
+			<div class="page-main">
+				<div style="padding: 1em; background-color: #fff;">
+					<input class="input" type="text" placeholder="placeholder">
+					<input class="input  input_required" type="text" placeholder="placeholder">
+					<input class="input  input_error" type="text" placeholder="placeholder" value="Error field">
+					<input class="input  input_ok" type="text" placeholder="placeholder" value="Ok field">
+
+					<br><br>
+
+					<div class="field-box  field-box_date">
+						<input class="field-box__input  input" type="text" placeholder="dd.mm.yyyy">
+						<button class="field-box__btn  field-box__btn_date" type="button"></button>
+					</div>
+					<div class="field-box  field-box_date">
+						<input class="field-box__input  input  input_required" type="text" placeholder="dd.mm.yyyy">
+						<button class="field-box__btn  field-box__btn_date" type="button"></button>
+					</div>
+					<div class="field-box  field-box_date">
+						<input class="field-box__input  input  input_required" type="text" placeholder="dd.mm.yyyy">
+						<button class="field-box__btn  field-box__btn_search" type="button"></button>
+					</div>
+
+					<br><br>
+
+
+					<div class="field-box">
+						<input class="field-box__input  input" type="text" placeholder="">
+						<button class="field-box__btn  field-box__btn_clear" type="button"></button>
+					</div>
+
+					<br><br>
+
+					<label class="control  control_checkbox">
+						<input class="control__input" type="checkbox">
+						<span class="control__icon"></span>
+						<span class="control__text">Предложение 1</span>
+					</label>
+
+					<label class="control  control_radio">
+						<input class="control__input" type="radio" name="radio-group">
+						<span class="control__icon"></span>
+						<span class="control__text">Предложение 1</span>
+					</label>
+
+					<label class="control  control_radio">
+						<input class="control__input" type="radio" name="radio-group">
+						<span class="control__icon"></span>
+						<span class="control__text">Предложение 2</span>
+					</label>
+
+					<br><br>
+
+					<a class="link" href="#">Текстовые ссылки</a>
+
+					<br><br>
+
+					<p>Подсветка <span class="highlight">рез</span>ультата в поиске</p>
+
+					<br><br>
+					<a class="btn" href="#">
+						<span class="btn__text">Button</span>
+					</a>
+					<button class="btn" type="button">
+						<span class="btn__text">Button</span>
+					</button>
+					<button class="btn  btn_cancel" type="button">
+						<span class="btn__text">Отмена</span>
+					</button>
+					<button class="btn  btn_act" type="button">
+						<span class="btn__text">Сохранить</span>
+					</button>
+					<button class="btn  btn_act  btn_round" type="button">
+						<span class="btn__text">Сохранить</span>
+					</button>
+					<button class="btn  btn_act  btn_big" type="button">
+						<span class="btn__text">Увеличенная кнопка</span>
+					</button>
+					<button class="btn  btn_big" type="button">
+						<span class="btn__text">Увеличенная кнопка</span>
+					</button>
+				</div>
+
+				<div class="datagrid" id="datagrid-id-1" style="min-height: 600px">
+					<!-- для каждого грида создаются стили, в которых указываются ширины ячеек -->
+					<style>
+						#datagrid-id-1 .datagrid__cell_0  { width: 56px; }
+						#datagrid-id-1 .datagrid__cell_1  { width: 168px; }
+						#datagrid-id-1 .datagrid__cell_2  { width: 76px; }
+						#datagrid-id-1 .datagrid__cell_3  { width: 60px; }
+						#datagrid-id-1 .datagrid__cell_4  { width: 300px; }
+						#datagrid-id-1 .datagrid__cell_5  { width: 222px; }
+						#datagrid-id-1 .datagrid__cell_6  { width: 86px; }
+						#datagrid-id-1 .datagrid__cell_7  { width: 84px; }
+						#datagrid-id-1 .datagrid__cell_8  { width: 116px; }
+						#datagrid-id-1 .datagrid__cell_9  { width: 96px; }
+						#datagrid-id-1 .datagrid__cell_10 { width: 120px; }
+						#datagrid-id-1 .datagrid__cell_11 { width: 152px; }
+					</style>
+					<div class="datagrid__filter">
+						<span class="datagrid__tag  tag  tag_all">Сбросить все фильтры</span>
+						<span class="datagrid__tag  tag">Инвестиционный кредит</span>
+						<span class="datagrid__tag  tag">Кредитное соглашение</span>
+						<span class="datagrid__tag  tag">Кредитное соглашение</span>
+						<span class="datagrid__tag  tag">100 000 000 - 200 000 000 000 EURO, млн.</span>
+						<span class="datagrid__tag  tag">01.10.2013 - 01.10.2014</span>
+					</div>
+					<div class="datagrid__head">
+						<div class="datagrid__scroll">
+							<div class="datagrid__row">
+								<div class="datagrid__cell  datagrid__cell_0"></div>
+								<div class="datagrid__cell  datagrid__cell_head  datagrid__cell_1">Состояние</div>
+								<div class="datagrid__cell  datagrid__cell_head  datagrid__cell_2">Номер</div>
+								<div class="datagrid__cell  datagrid__cell_head  datagrid__cell_3">Тип</div>
+								<div class="datagrid__cell  datagrid__cell_head  datagrid__cell_4">Наименование</div>
+								<div class="datagrid__cell  datagrid__cell_head  datagrid__cell_5">Контрагент</div>
+								<div class="datagrid__cell  datagrid__cell_align_right  datagrid__cell_head  datagrid__cell_6">Стоимость проекта, млн</div>
+								<div class="datagrid__cell  datagrid__cell_head  datagrid__cell_7">Валюта проекта</div>
+								<div class="datagrid__cell  datagrid__cell_align_right  datagrid__cell_head  datagrid__cell_8">обьем участия/ лимит выдачи/ стоимость сделки, млн</div>
+								<div class="datagrid__cell  datagrid__cell_head  datagrid__cell_9">Валюта участия</div>
+								<div class="datagrid__cell  datagrid__cell_head  datagrid__cell_10">Индикатор по мониторингу</div>
+								<div class="datagrid__cell  datagrid__cell_head  datagrid__cell_11">Менеджер</div>
+							</div>
+							<div class="datagrid__row  datagrid__row_tools">
+								<div class="datagrid__cell  datagrid__cell_0"></div>
+								<div class="datagrid__cell  datagrid__cell_head  datagrid__cell_1">
+									<div class="datagrid__cell-tool">
+										<button class="sort-btn"></button>
+									</div>
+								</div>
+								<div class="datagrid__cell  datagrid__cell_head  datagrid__cell_2">
+									<div class="datagrid__cell-tool">
+										<button class="sort-btn"></button>
+									</div>
+								</div>
+								<div class="datagrid__cell  datagrid__cell_head  datagrid__cell_3">
+									<div class="datagrid__cell-tool">
+										<button class="sort-btn"></button>
+									</div>
+								</div>
+								<div class="datagrid__cell  datagrid__cell_head  datagrid__cell_4">
+									<div class="datagrid__cell-tool">
+										<button class="sort-btn"></button>
+									</div>
+								</div>
+								<div class="datagrid__cell  datagrid__cell_head  datagrid__cell_5">
+									<div class="datagrid__cell-tool">
+										<button class="sort-btn"></button>
+									</div>
+								</div>
+								<div class="datagrid__cell  datagrid__cell_align_right  datagrid__cell_head  datagrid__cell_6">
+									<div class="datagrid__cell-tool">
+										<button class="sort-btn"></button>
+									</div>
+								</div>
+								<div class="datagrid__cell  datagrid__cell_head  datagrid__cell_7">
+									<div class="datagrid__cell-tool">
+										<button class="sort-btn"></button>
+									</div>
+								</div>
+								<div class="datagrid__cell  datagrid__cell_align_right  datagrid__cell_head  datagrid__cell_8">
+									<div class="datagrid__cell-tool">
+										<button class="sort-btn"></button>
+									</div>
+								</div>
+								<div class="datagrid__cell  datagrid__cell_head  datagrid__cell_9">
+									<div class="datagrid__cell-tool">
+										<button class="sort-btn"></button>
+									</div>
+								</div>
+								<div class="datagrid__cell  datagrid__cell_head  datagrid__cell_10">
+									<div class="datagrid__cell-tool">
+										<button class="sort-btn"></button>
+									</div>
+								</div>
+								<div class="datagrid__cell  datagrid__cell_head  datagrid__cell_11">
+									<div class="datagrid__cell-tool">
+										<button class="sort-btn"></button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="datagrid__main">
+						<div class="datagrid-collapse">
+							<div class="datagrid__row">
+								<div class="datagrid__cell  datagrid__cell_0">
+									<span class="datagrid__toggle" type="button"></span>
+								</div>
+								<div class="datagrid__cell  datagrid__cell_1">Новые</div>
+								<div class="datagrid__cell  datagrid__cell_2">365</div>
+								<div class="datagrid__cell  datagrid__cell_3">ИП</div>
+								<div class="datagrid__cell  datagrid__cell_4"><a class="link" href="#">Строительство телекоммуникационной сети для доступа в интернет</a></div>
+								<div class="datagrid__cell  datagrid__cell_5">Macquarie Renaissance Infrastructure Fund (MRIF)</div>
+								<div class="datagrid__cell  datagrid__cell_6">10 120</div>
+								<div class="datagrid__cell  datagrid__cell_7">РУБ</div>
+								<div class="datagrid__cell  datagrid__cell_8">7 084</div>
+								<div class="datagrid__cell  datagrid__cell_9">РУБ</div>
+								<div class="datagrid__cell  datagrid__cell_10  monitor-index  monitor-index_standard">Стандартные</div>
+								<div class="datagrid__cell  datagrid__cell_11">Петрикова Е.М.</div>
+							</div>
+							<div class="datagrid-collapse__out">
+								<div class="datagrid-collapse__in">
+									<div style="background: #f2f2f2;"><div>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Грамматики он, страна если несколько грустный решила. Коварный дороге, все рыбными она алфавит снова которое свое буквенных скатился вопроса напоивший переписали последний? Запятой, напоивший снова большой путь рыбными, использовало образ сих запятых океана пунктуация предупредила реторический, деревни взобравшись лучше, lorem подпоясал ему бросил ее от всех заголовок. Осталось вопрос взгляд букв выйти скатился пояс, переулка великий что однажды рыбного гор сбить языкового от всех, рукописи реторический всемогущая сих, образ текстов домах которое предложения. Даль пустился рот парадигматическая, над переулка lorem толку безорфографичный. Рыбными свою, но, подзаголовок, пустился это до скатился меня последний всеми, рекламных правилами одна. Лучше курсивных за гор вершину осталось букв злых предложения реторический свой если своего повстречался над, строчка, подзаголовок путь переписывается безорфографичный дорогу. Рот приставка вскоре ему имени lorem, что даль предупредила моей щеке силуэт рыбного. Приставка над обеспечивает скатился имеет безопасную ты, предупредила журчит несколько. Коварный встретил даже путь проектах заголовок над пояс то правилами жизни путь всемогущая, пунктуация от всех, буквоград жаренные послушавшись по всей осталось которое не безопасную залетают? Грамматики послушавшись имени повстречался взгляд великий, пустился предложения предупредила деревни ее инициал. Буквенных они заглавных приставка предупредила собрал парадигматическая букв бросил, за, текст, агенство жаренные которой вскоре ipsum.</div></div>
+								</div>
+							</div>
+						</div>
+						<div class="datagrid-collapse">
+							<div class="datagrid__row">
+								<div class="datagrid__cell  datagrid__cell_0">
+									<span class="datagrid__toggle" type="button"></span>
+								</div>
+								<div class="datagrid__cell  datagrid__cell_1">На рассмотрении</div>
+								<div class="datagrid__cell  datagrid__cell_2">565</div>
+								<div class="datagrid__cell  datagrid__cell_3">ИП</div>
+								<div class="datagrid__cell  datagrid__cell_4"><a class="link" href="#">Cоздание терминально-логистического центра «Белый Раст»</a></div>
+								<div class="datagrid__cell  datagrid__cell_5">ООО «Риверсайд»</div>
+								<div class="datagrid__cell  datagrid__cell_6">10 538</div>
+								<div class="datagrid__cell  datagrid__cell_7">РУБ</div>
+								<div class="datagrid__cell  datagrid__cell_8">6 866</div>
+								<div class="datagrid__cell  datagrid__cell_9">РУБ</div>
+								<div class="datagrid__cell  datagrid__cell_10  monitor-index  monitor-index_problem">Проблемные</div>
+								<div class="datagrid__cell  datagrid__cell_11">Денисова Е.В.</div>
+							</div>
+							<div class="datagrid-collapse__out">
+								<div class="datagrid-collapse__in">
+									<div style="background: #f2f2f2;">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</div>
+								</div>
+							</div>
+						</div>
+						<div class="datagrid-collapse">
+							<div class="datagrid__row">
+								<div class="datagrid__cell  datagrid__cell_0">
+									<span class="datagrid__toggle" type="button"></span>
+								</div>
+								<div class="datagrid__cell  datagrid__cell_1">Финансирование открыто</div>
+								<div class="datagrid__cell  datagrid__cell_2">586</div>
+								<div class="datagrid__cell  datagrid__cell_3">ИП</div>
+								<div class="datagrid__cell  datagrid__cell_4"><a class="link" href="#">Создание объединенного транспортно - логистического комплекса на территории</a></div>
+								<div class="datagrid__cell  datagrid__cell_5">ОАО «Фрейт Вилладж Калуга»</div>
+								<div class="datagrid__cell  datagrid__cell_6">4 695</div>
+								<div class="datagrid__cell  datagrid__cell_7">РУБ</div>
+								<div class="datagrid__cell  datagrid__cell_8">3 700</div>
+								<div class="datagrid__cell  datagrid__cell_9">РУБ</div>
+								<div class="datagrid__cell  datagrid__cell_10  monitor-index  monitor-index_standard">Стандартные</div>
+								<div class="datagrid__cell  datagrid__cell_11">Феофанова Н.Ю.</div>
+							</div>
+							<div class="datagrid-collapse__out">
+								<div class="datagrid-collapse__in">
+									<div class="datagrid-collapse">
+										<div class="datagrid__row">
+											<div class="datagrid__cell  datagrid__cell_0">
+												<span class="datagrid__toggle" type="button"></span>
+											</div>
+											<div class="datagrid__cell  datagrid__cell_1">Финансируется</div>
+											<div class="datagrid__cell  datagrid__cell_2">1407</div>
+											<div class="datagrid__cell  datagrid__cell_3">ИК</div>
+											<div class="datagrid__cell  datagrid__cell_4"><a class="link" href="#">Создание объединенного транспортно-логистического комплекса на</a></div>
+											<div class="datagrid__cell  datagrid__cell_5">ОАО «Фрейт Вилладж Калуга»</div>
+											<div class="datagrid__cell  datagrid__cell_6"></div>
+											<div class="datagrid__cell  datagrid__cell_7"></div>
+											<div class="datagrid__cell  datagrid__cell_8"></div>
+											<div class="datagrid__cell  datagrid__cell_9"></div>
+											<div class="datagrid__cell  datagrid__cell_10  monitor-index  monitor-index_watch">Под наблюдением</div>
+											<div class="datagrid__cell  datagrid__cell_11">Феофанова Н.Ю.</div>
+										</div>
+										<div class="datagrid-collapse__out">
+											<div class="datagrid-collapse__in">
+												<div class="datagrid-collapse">
+													<div class="datagrid__row">
+														<div class="datagrid__cell  datagrid__cell_0"></div>
+														<div class="datagrid__cell  datagrid__cell_1">Действующее</div>
+														<div class="datagrid__cell  datagrid__cell_2">1408</div>
+														<div class="datagrid__cell  datagrid__cell_3">к/с</div>
+														<div class="datagrid__cell  datagrid__cell_4"><a class="link" href="#">Создание объединенного транспортно- логистического</a></div>
+														<div class="datagrid__cell  datagrid__cell_5">ОАО «Фрейт Вилладж Калуга»</div>
+														<div class="datagrid__cell  datagrid__cell_6"></div>
+														<div class="datagrid__cell  datagrid__cell_7"></div>
+														<div class="datagrid__cell  datagrid__cell_8"></div>
+														<div class="datagrid__cell  datagrid__cell_9"></div>
+														<div class="datagrid__cell  datagrid__cell_10  monitor-index  monitor-index_problem">Проблемные</div>
+														<div class="datagrid__cell  datagrid__cell_11">Феофанова Н.Ю.</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="datagrid-collapse">
+							<div class="datagrid__row">
+								<div class="datagrid__cell  datagrid__cell_0">
+									<span class="datagrid__toggle" type="button"></span>
+								</div>
+								<div class="datagrid__cell  datagrid__cell_1">На рассмотрении</div>
+								<div class="datagrid__cell  datagrid__cell_2">552</div>
+								<div class="datagrid__cell  datagrid__cell_3">ИП</div>
+								<div class="datagrid__cell  datagrid__cell_4"><a class="link" href="#">Финансирование проекта комплексного развития аэропорта г. Хабаровска</a></div>
+								<div class="datagrid__cell  datagrid__cell_5">ОАО "Хабаровский аэропорт"</div>
+								<div class="datagrid__cell  datagrid__cell_6">6 630</div>
+								<div class="datagrid__cell  datagrid__cell_7">РУБ</div>
+								<div class="datagrid__cell  datagrid__cell_8">4 641</div>
+								<div class="datagrid__cell  datagrid__cell_9">РУБ</div>
+								<div class="datagrid__cell  datagrid__cell_10  monitor-index  monitor-index_standard">Стандартные</div>
+								<div class="datagrid__cell  datagrid__cell_11">Радомский А.В.</div>
+							</div>
+							<div class="datagrid-collapse__out">
+								<div class="datagrid-collapse__in">
+									<div style="background: #f2f2f2;">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Предупредила, коварный прямо пунктуация большого заголовок безорфографичный своих, предложения жизни продолжил безопасную речью свой заглавных парадигматическая даже над строчка лучше!</div>
+								</div>
+							</div>
+						</div>
+						<div class="datagrid-collapse">
+							<div class="datagrid__row">
+								<div class="datagrid__cell  datagrid__cell_0">
+									<span class="datagrid__toggle" type="button"></span>
+								</div>
+								<div class="datagrid__cell  datagrid__cell_1">На рассмотрении</div>
+								<div class="datagrid__cell  datagrid__cell_2">555</div>
+								<div class="datagrid__cell  datagrid__cell_3">ИП</div>
+								<div class="datagrid__cell  datagrid__cell_4"><a class="link" href="#">Лизинг вагонов метро</a></div>
+								<div class="datagrid__cell  datagrid__cell_5">Трансмашхолдинг</div>
+								<div class="datagrid__cell  datagrid__cell_6">45 079</div>
+								<div class="datagrid__cell  datagrid__cell_7">РУБ</div>
+								<div class="datagrid__cell  datagrid__cell_8">31 555,3</div>
+								<div class="datagrid__cell  datagrid__cell_9">РУБ</div>
+								<div class="datagrid__cell  datagrid__cell_10  monitor-index  monitor-index_watch">Под наблюдением</div>
+								<div class="datagrid__cell  datagrid__cell_11">Родин П.В.</div>
+							</div>
+							<div class="datagrid-collapse__out">
+								<div class="datagrid-collapse__in">
+									<div style="background: #f2f2f2;">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Переулка, знаках.</div>
+								</div>
+							</div>
+						</div>
+						<div class="datagrid-collapse">
+							<div class="datagrid__row">
+								<div class="datagrid__cell  datagrid__cell_0">
+									<span class="datagrid__toggle" type="button"></span>
+								</div>
+								<div class="datagrid__cell  datagrid__cell_1">На рассмотрении</div>
+								<div class="datagrid__cell  datagrid__cell_2">265</div>
+								<div class="datagrid__cell  datagrid__cell_3">ИП</div>
+								<div class="datagrid__cell  datagrid__cell_4"><a class="link" href="#">Создание терминально-логистического центра "Ярославский"</a></div>
+								<div class="datagrid__cell  datagrid__cell_5">Логистика КС, ООО</div>
+								<div class="datagrid__cell  datagrid__cell_6">4 581</div>
+								<div class="datagrid__cell  datagrid__cell_7">РУБ</div>
+								<div class="datagrid__cell  datagrid__cell_8">3 206,7</div>
+								<div class="datagrid__cell  datagrid__cell_9">РУБ</div>
+								<div class="datagrid__cell  datagrid__cell_10  monitor-index  monitor-index_pot-problem">Потенциально проблемные</div>
+								<div class="datagrid__cell  datagrid__cell_11">Денисова Е.В</div>
+							</div>
+							<div class="datagrid-collapse__out">
+								<div class="datagrid-collapse__in">
+									<div style="background: #f2f2f2;">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Предупредила они имеет собрал свой, подпоясал силуэт реторический она вскоре но ведущими вдали, однажды страну жаренные рыбными необходимыми коварный по всей буквенных ему алфавит ты над послушавшись безорфографичный, пояс вопроса! Она, текстами его города буквенных продолжил пунктуация предложения свою власти свое парадигматическая знаках вопрос толку строчка рукописи, жаренные языком, единственное пустился семь прямо возвращайся великий! Над собрал, вопрос то предложения языкового города парадигматическая ручеек щеке рот букв образ о несколько сбить прямо, своего реторический агенство рукописи великий которой, пунктуация пояс приставка использовало имеет дал! Там силуэт, своих знаках приставка семантика они.</div>
+								</div>
+							</div>
+						</div>
+						<div class="datagrid-collapse">
+							<div class="datagrid__row">
+								<div class="datagrid__cell  datagrid__cell_0">
+									<span class="datagrid__toggle" type="button"></span>
+								</div>
+								<div class="datagrid__cell  datagrid__cell_1">На рассмотрении/ вносятся изменения</div>
+								<div class="datagrid__cell  datagrid__cell_2">565</div>
+								<div class="datagrid__cell  datagrid__cell_3">ИП</div>
+								<div class="datagrid__cell  datagrid__cell_4"><a class="link" href="#">Финансирование проекта комплексного развития аэропорта г. Хабаровска</a></div>
+								<div class="datagrid__cell  datagrid__cell_5">ОАО "ВЭБ-Лизинг"</div>
+								<div class="datagrid__cell  datagrid__cell_6">17 834</div>
+								<div class="datagrid__cell  datagrid__cell_7">РУБ</div>
+								<div class="datagrid__cell  datagrid__cell_8">12 483,8</div>
+								<div class="datagrid__cell  datagrid__cell_9">РУБ</div>
+								<div class="datagrid__cell  datagrid__cell_10  monitor-index  monitor-index_standard">Стандартные</div>
+								<div class="datagrid__cell  datagrid__cell_11">Родин П.В.</div>
+							</div>
+							<div class="datagrid-collapse__out">
+								<div class="datagrid-collapse__in">
+									<div style="background: #f2f2f2;">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Ему запятой, эта большого. Страну предупредила выйти строчка власти, языком запятых пунктуация переулка взобравшись маленький однажды текст подзаголовок диких, рыбными!</div>
+								</div>
+							</div>
+						</div>
+						<div class="datagrid-collapse">
+							<div class="datagrid__row">
+								<div class="datagrid__cell  datagrid__cell_0">
+									<span class="datagrid__toggle" type="button"></span>
+								</div>
+								<div class="datagrid__cell  datagrid__cell_1">На рассмотрении</div>
+								<div class="datagrid__cell  datagrid__cell_2">234</div>
+								<div class="datagrid__cell  datagrid__cell_3">ИП</div>
+								<div class="datagrid__cell  datagrid__cell_4"><a class="link" href="#">Создание терминально-логистического центра "Ховрино"</a></div>
+								<div class="datagrid__cell  datagrid__cell_5">Логистика КС, ООО</div>
+								<div class="datagrid__cell  datagrid__cell_6">7 082</div>
+								<div class="datagrid__cell  datagrid__cell_7">РУБ</div>
+								<div class="datagrid__cell  datagrid__cell_8">4 929</div>
+								<div class="datagrid__cell  datagrid__cell_9">РУБ</div>
+								<div class="datagrid__cell  datagrid__cell_10  monitor-index  monitor-index_pop-problem">Потенциально проблемные</div>
+								<div class="datagrid__cell  datagrid__cell_11">Феофанова Н.Ю.</div>
+							</div>
+							<div class="datagrid-collapse__out">
+								<div class="datagrid-collapse__in">
+									<div class="datagrid__row">
+										<div class="datagrid__cell  datagrid__cell_0"></div>
+										<div class="datagrid__cell  datagrid__cell_1">Комплексная экспертиза</div>
+										<div class="datagrid__cell  datagrid__cell_2">634</div>
+										<div class="datagrid__cell  datagrid__cell_3">ИК</div>
+										<div class="datagrid__cell  datagrid__cell_4"><a class="link" href="#">Создание терминально-логистического центра "Ховрино"</a></div>
+										<div class="datagrid__cell  datagrid__cell_5">Логистика КС, ООО</div>
+										<div class="datagrid__cell  datagrid__cell_6"></div>
+										<div class="datagrid__cell  datagrid__cell_7"></div>
+										<div class="datagrid__cell  datagrid__cell_8"></div>
+										<div class="datagrid__cell  datagrid__cell_9"></div>
+										<div class="datagrid__cell  datagrid__cell_10  monitor-index  monitor-index_problem">Проблемные</div>
+										<div class="datagrid__cell  datagrid__cell_11">Феофанова Н.Ю.</div>
+									</div>
+									<div class="datagrid__row  datagrid__row_disabled">
+										<div class="datagrid__cell  datagrid__cell_0"></div>
+										<div class="datagrid__cell  datagrid__cell_1">Получен полный комплект документов</div>
+										<div class="datagrid__cell  datagrid__cell_2">345</div>
+										<div class="datagrid__cell  datagrid__cell_3">ПО</div>
+										<div class="datagrid__cell  datagrid__cell_4"><a class="link" href="#">Создание терминально-логистического центра "Ховрино"</a></div>
+										<div class="datagrid__cell  datagrid__cell_5">Логистика КС, ООО</div>
+										<div class="datagrid__cell  datagrid__cell_6">7 082</div>
+										<div class="datagrid__cell  datagrid__cell_7">РУБ</div>
+										<div class="datagrid__cell  datagrid__cell_8">4 929</div>
+										<div class="datagrid__cell  datagrid__cell_9">РУБ</div>
+										<div class="datagrid__cell  datagrid__cell_10"></div>
+										<div class="datagrid__cell  datagrid__cell_11">Феофанова Н.Ю.</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="datagrid-collapse">
+							<div class="datagrid__row">
+								<div class="datagrid__cell  datagrid__cell_0"></div>
+								<div class="datagrid__cell  datagrid__cell_1">На рассмотрении</div>
+								<div class="datagrid__cell  datagrid__cell_2">767</div>
+								<div class="datagrid__cell  datagrid__cell_3">ИП</div>
+								<div class="datagrid__cell  datagrid__cell_4"><a class="link" href="#">Создание терминально-логистического центра "Люблино"</a></div>
+								<div class="datagrid__cell  datagrid__cell_5">Логистика КС, ООО</div>
+								<div class="datagrid__cell  datagrid__cell_6">25 232</div>
+								<div class="datagrid__cell  datagrid__cell_7">РУБ</div>
+								<div class="datagrid__cell  datagrid__cell_8">17 662,4</div>
+								<div class="datagrid__cell  datagrid__cell_9">РУБ</div>
+								<div class="datagrid__cell  datagrid__cell_10  monitor-index  monitor-index_watch">Под наблюдением</div>
+								<div class="datagrid__cell  datagrid__cell_11">Денисова Е.В</div>
+							</div>
+							<div class="datagrid-collapse__out">
+								<div class="datagrid-collapse__in"></div>
+							</div>
+						</div>
+						<div class="datagrid-collapse">
+							<div class="datagrid__row">
+								<div class="datagrid__cell  datagrid__cell_0"></div>
+								<div class="datagrid__cell  datagrid__cell_1">На рассмотрении</div>
+								<div class="datagrid__cell  datagrid__cell_2"></div>
+								<div class="datagrid__cell  datagrid__cell_3">ИП</div>
+								<div class="datagrid__cell  datagrid__cell_4"><a class="link" href="#">Строительство угольного терминала в морском порту Ванино в бухте Мучке</a></div>
+								<div class="datagrid__cell  datagrid__cell_5">ООО «Сахатранс»</div>
+								<div class="datagrid__cell  datagrid__cell_6">25 500</div>
+								<div class="datagrid__cell  datagrid__cell_7">РУБ</div>
+								<div class="datagrid__cell  datagrid__cell_8">17 850</div>
+								<div class="datagrid__cell  datagrid__cell_9">РУБ</div>
+								<div class="datagrid__cell  datagrid__cell_10  monitor-index  monitor-index_pot-problem">Потенциально проблемные</div>
+								<div class="datagrid__cell  datagrid__cell_11">Попович Е.М.</div>
+							</div>
+							<div class="datagrid-collapse__out">
+								<div class="datagrid-collapse__in"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		<!-- END page-content -->
+	</div>
+	<!-- END page -->
+
+
+	<!-- BEGIN scripts  -->
+	<!-- сторонние библиотеки -->
+	<script src="js/jquery-1.12.1.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/select2.full.min.js"></script>
+	<script src="js/jquery.inputmask.bundle.min.js"></script>
+	<script src="js/placeholders.min.js"></script>
+
+	<!-- основные скрипты -->
+	<script src="js/scripts.js"></script>
+	<!-- END scripts -->
+
+</body>
+</html>
